@@ -132,6 +132,10 @@
     <span>Scroll</span>
     <div class="hero-scroll-line"></div>
   </div>
+
+  <button id="hero-sound-toggle" class="hero-sound-btn" aria-label="Activar o silenciar sonido del video" title="Activar sonido">
+    <span class="sound-icon">🔇</span>
+  </button>
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -166,7 +170,7 @@
 <section id="about" aria-labelledby="about-title">
   <div class="container">
     <div class="about-grid">
-      <div class="about-image-wrap reveal">
+      <div class="about-image-wrap tilt-card reveal">
         <img src="assets/images/hero-bg.jpg"
              alt="Interior premium de Jhon Suarez Barber Shop con luces hexagonales y silla de barbero"
              loading="lazy" width="640" height="480">
@@ -261,11 +265,11 @@
           <a href="#gallery" class="btn btn-outline">Ver galería completa →</a>
         </div>
       </div>
-      <div class="showcase-visual reveal reveal-delay-2">
-        <img src="assets/images/gallery-1.jpg"
-             alt="Trabajo artístico de Jhon Suarez — diseño escultórico en cabello"
-             loading="lazy" width="500" height="700">
-        <span class="showcase-accent">ARTWORK</span>
+      <div class="showcase-visual tilt-card reveal reveal-delay-2">
+        <video class="showcase-video" autoplay muted loop playsinline poster="assets/images/gallery-1.jpg">
+          <source src="assets/videos/clips/clip_a_hands.mp4" type="video/mp4">
+        </video>
+        <span class="showcase-accent">✦ CORTES DE PRECISIÓN</span>
       </div>
     </div>
   </div>
@@ -368,6 +372,13 @@
           <span style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3);color:var(--purple);padding:8px 16px;border-radius:50px;font-size:0.8rem;font-weight:600">💆 Masajes</span>
           <span style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3);color:var(--purple);padding:8px 16px;border-radius:50px;font-size:0.8rem;font-weight:600">🪷 Depilación</span>
         </div>
+        <div class="estetica-gallery reveal reveal-delay-3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;">
+          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-1.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
+          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-2.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
+          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-3.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
+          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-4.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
+        </div>
+
         <div style="margin-top:32px" class="reveal reveal-delay-3">
           <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
              target="_blank" rel="noopener"
@@ -394,7 +405,7 @@
     </div>
 
     <div class="reviews-grid">
-      <article class="review-card reveal">
+      <article class="review-card tilt-card reveal">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"El mejor corte que me han hecho en años. Jhon tiene una precisión increíble con el fade y se nota que ama su trabajo. El local es espectacular."</p>
         <div class="review-author">
@@ -406,7 +417,7 @@
         </div>
       </article>
 
-      <article class="review-card reveal reveal-delay-1">
+      <article class="review-card tilt-card reveal reveal-delay-1">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"Fui con mi hijo al Pack Padre &amp; Hijo y fue una experiencia maravillosa. Los dos salimos felicísimos y el regalo sorpresa para el niño fue un detalle genial."</p>
         <div class="review-author">
@@ -418,7 +429,7 @@
         </div>
       </article>
 
-      <article class="review-card reveal reveal-delay-2">
+      <article class="review-card tilt-card reveal reveal-delay-2">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"Las extensiones de pestañas que me hizo Alejandra son perfectas. Naturalísimas y duran muchísimo. Ya tengo mi próxima cita reservada."</p>
         <div class="review-author">
@@ -430,7 +441,7 @@
         </div>
       </article>
 
-      <article class="review-card reveal reveal-delay-1">
+      <article class="review-card tilt-card reveal reveal-delay-1">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"La Experiencia Relax Barber es lo más. Corte + barba + masaje de espalda por 60€. Sales nuevo, literalmente. Ya no voy a ningún otro sitio."</p>
         <div class="review-author">
@@ -442,7 +453,7 @@
         </div>
       </article>
 
-      <article class="review-card reveal reveal-delay-2">
+      <article class="review-card tilt-card reveal reveal-delay-2">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"Vine de Sevilla expresamente porque vi los vídeos en Instagram. El skin fade que me hicieron fue exactamente lo que buscaba. Arte puro."</p>
         <div class="review-author">
@@ -454,7 +465,7 @@
         </div>
       </article>
 
-      <article class="review-card reveal reveal-delay-3">
+      <article class="review-card tilt-card reveal reveal-delay-3">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"El Dermapen facial fue una revelación. Mi piel cambió completamente después del bono de 3 sesiones. Profesionalismo y calidez al 100%."</p>
         <div class="review-author">

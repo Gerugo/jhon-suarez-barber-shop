@@ -639,9 +639,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 9/14;
+  transform-style: preserve-3d;
 }
-.showcase-visual img {
-  width: 100%; height: 100%; object-fit: cover;
+.showcase-visual img,
+.showcase-visual video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
 }
 .showcase-visual::after {
   content: '';
@@ -660,6 +662,41 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   text-transform: uppercase;
   padding: 6px 14px;
   border-radius: 50px;
+  box-shadow: 0 0 15px var(--blue-glow);
+}
+
+/* Hero sound toggle button */
+.hero-sound-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid rgba(0, 170, 255, 0.3);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+.hero-sound-btn:hover {
+  background: rgba(0, 170, 255, 0.25);
+  border-color: var(--blue);
+  transform: scale(1.08);
+  box-shadow: 0 0 25px var(--blue-glow);
+}
+
+/* 3D Depth Card Classes */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 /* ── REVIEWS ── */

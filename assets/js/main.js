@@ -196,3 +196,56 @@ if (heroBg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     heroBg.style.transform = `scale(1.05) translateY(${y * 0.25}px)`;
   }, { passive: true });
 }
+
+// ── Sound Toggle for Hero Video ──────────────────────────────
+const heroVideo = document.querySelector('.hero-video');
+const soundBtn  = document.getElementById('hero-sound-toggle');
+const soundIcon = soundBtn?.querySelector('.sound-icon');
+
+if (heroVideo && soundBtn) {
+  soundBtn.addEventListener('click', () => {
+    heroVideo.muted = !heroVideo.muted;
+    if (soundIcon) {
+      soundIcon.textContent = heroVideo.muted ? '🔇' : '🔊';
+    }
+    soundBtn.title = heroVideo.muted ? 'Activar sonido' : 'Silenciar sonido';
+  });
+}
+
+// ── 3D Interactive Tilt on Cursor Move ──────────────────────
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(pointer: fine)').matches) {
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    let bounds;
+    function updateBounds() {
+      bounds = card.getBoundingClientRect();
+    }
+    card.addEventListener('mouseenter', updateBounds);
+    card.addEventListener('mousemove', (e) => {
+      if (!bounds) updateBounds();
+      const mouseX = e.clientX - bounds.left;
+      const mouseY = e.clientY - bounds.top;
+      const xPct = mouseX / bounds.width - 0.5;
+      const yPct = mouseY / bounds.height - 0.5;
+      const rotateX = -yPct * 16;
+      const rotateY = xPct * 16;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  });
+}
+
+// ── 3D Scroll Depth Effect ──────────────────────────────────
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    // Parallax on hero content
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent && scrollY < window.innerHeight) {
+      heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
+      heroContent.style.opacity = Math.max(0, 1 - scrollY / (window.innerHeight * 0.8));
+    }
+  }, { passive: true });
+}
+

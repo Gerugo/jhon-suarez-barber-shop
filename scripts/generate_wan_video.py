@@ -7,6 +7,14 @@ import os
 import sys
 import argparse
 import urllib.request
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 from segmind import SegmindClient
 
 DEFAULT_API_KEY = os.getenv("SEGMIND_API_KEY", "SG_d174d6bcf9ab58cf")
