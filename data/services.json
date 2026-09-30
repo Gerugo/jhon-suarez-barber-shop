@@ -1,0 +1,91 @@
+{
+  "booksy_url": "https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones",
+  "categories": [
+    {
+      "id": "barberia",
+      "name": "Barbería",
+      "name_en": "Barber Shop",
+      "icon": "✂️",
+      "color": "#00aaff",
+      "services": [
+        { "name": "Mid Fade", "desc": "Fade Medio. Degradado clásico al nivel medio de la cabeza.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Taper Fade", "desc": "Degradado suave y gradual. Look limpio y versátil.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Low Fade", "desc": "Fade Bajo. Degradado en la parte inferior, efecto sutil.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "High Fade", "desc": "Fade Alto. Degradado en la parte superior, look atrevido.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Skin Fade", "desc": "Fade a la piel. Degradado hasta piel al ras, máxima definición.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Drop Fade", "desc": "Fade Drop. Degradado que cae detrás de la oreja, estilo único.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Temple Fade", "desc": "Fade en las sienes. Definición extrema en la zona temporal.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Burst Fade", "desc": "Fade en forma de arco alrededor de la oreja. Moderno y llamativo.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Bald Fade", "desc": "Fade a calavera. El degradado más extremo, hasta piel total.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Afro Fade", "desc": "Fade para cabello rizado. Respeta la textura natural del afro.", "price": "17€+", "duration": "30min", "emoji": "💈" },
+        { "name": "Flat Top", "desc": "Superficie plana y recta en lo alto. Estilo clásico militar redefinido.", "price": "17€+", "duration": "30min", "emoji": "✂️" },
+        { "name": "Corte Francés", "desc": "Parte superior texturizada, flequillo adelantado, laterales degradados.", "price": "17€+", "duration": "30min", "emoji": "✂️" },
+        { "name": "Barba Italiana", "desc": "Perfilado y arreglo de barba italiana con acabado profesional.", "price": "15€+", "duration": "30min", "emoji": "🪒" },
+        { "name": "Barba Completa", "desc": "Full Beard. Arreglo completo de barba con toalla caliente y bálsamo.", "price": "15€+", "duration": "30min", "emoji": "🪒" },
+        { "name": "Cut & Beard", "desc": "Corte + Barba. Ritual clásico con navaja, toalla caliente y aftershave.", "price": "30€+", "duration": "1h", "emoji": "💈" },
+        { "name": "Corte Infantil", "desc": "Para peques de hasta 12 años. Corte con paciencia y cariño.", "price": "13€+", "duration": "30min", "emoji": "🍼" },
+        { "name": "Pack Padre & Hijo", "desc": "Corte de caballero + corte niño (≤10 años) + asesoramiento + peinado + regalo sorpresa.", "price": "29€+", "duration": "1h", "emoji": "👨‍👦" },
+        { "name": "Total Men's Grooming", "desc": "Corte personalizado + depilación de cejas + depilación de nariz.", "price": "22€+", "duration": "30min", "emoji": "✨" },
+        { "name": "Clean Cut Experience", "desc": "Corte + limpieza facial + depilación de cejas, nariz y orejas.", "price": "60€+", "duration": "1h 30min", "emoji": "⚡" },
+        { "name": "Experiencia Relax Barber", "desc": "Corte + arreglo de barba con ritual toalla caliente + masaje relajante de espalda.", "price": "60€+", "duration": "1h 30min", "emoji": "🔥" }
+      ]
+    },
+    {
+      "id": "pestanas",
+      "name": "Cejas & Pestañas",
+      "name_en": "Brows & Lashes",
+      "icon": "👁️",
+      "color": "#9b59b6",
+      "services": [
+        { "name": "Lifting de Pestañas", "desc": "Curvado permanente y lifting profesional para una mirada más abierta.", "price": "35€", "duration": "1h", "emoji": "👸" },
+        { "name": "Pestañas Volumen Tecnológico", "desc": "Extensiones de volumen con técnica tecnológica avanzada.", "price": "55€", "duration": "1h 30min", "emoji": "👸" },
+        { "name": "Pestañas Volumen Artesanal", "desc": "Volumen artesanal hecho a mano, resultado ultra natural.", "price": "65€+", "duration": "2h 30min", "emoji": "👸" },
+        { "name": "Extensión Clásica", "desc": "Extensiones de pestañas clásicas, una a una. Mirada sofisticada.", "price": "40€", "duration": "1h 30min", "emoji": "👸" },
+        { "name": "Relleno Pestañas Clásicas", "desc": "Relleno para pestañas clásicas (requiere 40-50% base).", "price": "25€", "duration": "1h 15min", "emoji": "👸" },
+        { "name": "Relleno Tecnológico", "desc": "Relleno de extensiones tecnológicas (requiere 40-50% base).", "price": "Variable", "duration": "1h 30min", "emoji": "👸" },
+        { "name": "Retiro de Pestañas", "desc": "Retiro seguro de extensiones de otros centros.", "price": "10€", "duration": "20min", "emoji": "✂️" },
+        { "name": "Diseño de Cejas + Henna", "desc": "Diseño, depilación y pigmentación con henna natural.", "price": "15€", "duration": "20min", "emoji": "✨" },
+        { "name": "Laminado de Cejas", "desc": "Laminado profesional para cejas perfectamente definidas.", "price": "25€", "duration": "1h", "emoji": "👸" }
+      ]
+    },
+    {
+      "id": "depilacion",
+      "name": "Depilación",
+      "name_en": "Waxing",
+      "icon": "🪷",
+      "color": "#e91e8c",
+      "services": [
+        { "name": "Depilación Cejas", "desc": "Depilación y perfilado de cejas con cera.", "price": "7€", "duration": "20min", "emoji": "👁️" },
+        { "name": "Depilación Nasal", "desc": "Eliminación de vello visible en nariz.", "price": "4€", "duration": "10min", "emoji": "👃" },
+        { "name": "Depilación Bigote", "desc": "Eliminación suave del vello de bigote.", "price": "3€", "duration": "15min", "emoji": "💋" },
+        { "name": "Depilación Axilas", "desc": "Depilación completa de axilas con cera.", "price": "8€", "duration": "15min", "emoji": "✨" },
+        { "name": "Depilación Media Pierna", "desc": "Media pierna, piel suave y libre de vello.", "price": "10€", "duration": "30min", "emoji": "🦵" },
+        { "name": "Depilación Pierna Completa", "desc": "Pierna completa, resultados duraderos.", "price": "18€", "duration": "45min", "emoji": "🦵" },
+        { "name": "Depilación Bikini", "desc": "Depilación de zona bikini con máximo cuidado.", "price": "20€", "duration": "45min", "emoji": "✨" }
+      ]
+    },
+    {
+      "id": "masajes",
+      "name": "Masajes",
+      "name_en": "Massage",
+      "icon": "💆",
+      "color": "#2ecc71",
+      "services": [
+        { "name": "Masaje Relajante de Espalda", "desc": "Movimientos suaves que liberan tensión dorsal y revitalizan cuerpo y mente.", "price": "25€", "duration": "35min", "emoji": "💆" },
+        { "name": "Maderoterapia", "desc": "Masaje corporal con herramientas de madera. Activa circulación y mejora la piel.", "price": "40€", "duration": "1h", "emoji": "🌿" }
+      ]
+    },
+    {
+      "id": "facial",
+      "name": "Cuidado Facial",
+      "name_en": "Facial Care",
+      "icon": "✨",
+      "color": "#f39c12",
+      "services": [
+        { "name": "Limpieza Facial Básica", "desc": "Limpieza profunda, exfoliación, extracción, mascarilla e hidratación. Piel luminosa.", "price": "35€+", "duration": "1h", "emoji": "✨" },
+        { "name": "Limpieza Facial + Dermapen", "desc": "Limpieza avanzada con microneedling. Estimula colágeno, mejora textura y atenuación de marcas.", "price": "70€+", "duration": "1h 30min", "emoji": "💎" },
+        { "name": "Bono Dermapen x3", "desc": "3 sesiones de limpieza con Dermapen. Ahorra 50€. El tratamiento más completo.", "price": "160€", "duration": "1h 15min", "emoji": "🎯" }
+      ]
+    }
+  ]
+}
