@@ -23,8 +23,8 @@
         { "name": "Barba Italiana", "desc": "Perfilado y arreglo de barba italiana con acabado profesional.", "price": "15€+", "duration": "30min", "emoji": "🪒" },
         { "name": "Barba Completa", "desc": "Full Beard. Arreglo completo de barba con toalla caliente y bálsamo.", "price": "15€+", "duration": "30min", "emoji": "🪒" },
         { "name": "Cut & Beard", "desc": "Corte + Barba. Ritual clásico con navaja, toalla caliente y aftershave.", "price": "30€+", "duration": "1h", "emoji": "💈" },
-        { "name": "Corte Infantil", "desc": "Para peques de hasta 12 años. Corte con paciencia y cariño.", "price": "13€+", "duration": "30min", "emoji": "🍼" },
-        { "name": "Pack Padre & Hijo", "desc": "Corte de caballero + corte niño (≤10 años) + asesoramiento + peinado + regalo sorpresa.", "price": "29€+", "duration": "1h", "emoji": "👨‍👦" },
+        { "name": "Corte Infantil", "desc": "Para peques de 2 a 12 años. Corte con paciencia y cariño.", "price": "13€+", "duration": "30min", "emoji": "🍼" },
+        { "name": "Pack Padre & Hijo", "desc": "Corte de caballero + corte niño (2-10 años) + asesoramiento + peinado + regalo sorpresa.", "price": "29€+", "duration": "1h", "emoji": "👨‍👦" },
         { "name": "Total Men's Grooming", "desc": "Corte personalizado + depilación de cejas + depilación de nariz.", "price": "22€+", "duration": "30min", "emoji": "✨" },
         { "name": "Clean Cut Experience", "desc": "Corte + limpieza facial + depilación de cejas, nariz y orejas.", "price": "60€+", "duration": "1h 30min", "emoji": "⚡" },
         { "name": "Experiencia Relax Barber", "desc": "Corte + arreglo de barba con ritual toalla caliente + masaje relajante de espalda.", "price": "60€+", "duration": "1h 30min", "emoji": "🔥" }
