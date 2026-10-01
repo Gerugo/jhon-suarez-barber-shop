@@ -1,0 +1,3 @@
+# Source video masters (large raw assets)
+source-video/*.mp4
+*.temp.mp4

@@ -20,6 +20,7 @@
 
   <!-- Premium CSS -->
   <link rel="stylesheet" href="assets/css/premium.css">
+  <link rel="stylesheet" href="assets/css/cinema-scroll.css">
 
   <!-- Vector Icons Pack -->
   <script src="assets/js/icons.js"></script>
@@ -89,8 +90,8 @@
 <section id="hero" aria-label="Bienvenida">
 
   <div class="hero-bg-fallback" aria-hidden="true"></div>
-  <video class="hero-video" autoplay muted loop playsinline
-         poster="assets/images/hero-bg.jpg"
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+         poster="assets/images/hero-poster.jpg"
          aria-label="Video cinemático del interior de Jhon Suarez Barber Shop">
     <source src="assets/videos/hero.mp4" type="video/mp4">
   </video>
@@ -134,16 +135,31 @@
 <!-- ════════════════════════════════════════════════════════
      02 — MANIFESTO (PINNED SCROLLYTELLING)
 ════════════════════════════════════════════════════════ -->
-<section id="manifesto" aria-labelledby="manifesto-title">
-  <div class="manifesto-sticky">
-    <div class="manifesto-bg" aria-hidden="true"></div>
-    <div class="manifesto-inner">
-      <p class="manifesto-label" aria-hidden="true">Nuestra filosofía</p>
+<section id="manifesto" class="scene" aria-labelledby="manifesto-title"
+  data-seq-path="assets/seq/dolly/" data-seq-count="120"
+  data-seq-path-mobile="assets/seq/dolly-m/" data-seq-count-mobile="60"
+  data-seq-ext="webp">
+  <div class="scene-sticky">
+    <img class="scene-poster" src="assets/images/hero-bg.jpg" alt="Interior de Jhon Suarez Barber Shop" loading="lazy">
+    <canvas class="scene-canvas" aria-hidden="true"></canvas>
+
+    <div class="scene-text" data-from="0.05" data-to="0.52">
+      <p class="manifesto-label" aria-hidden="true" style="margin-bottom:20px">Nuestra filosofía</p>
       <h2 id="manifesto-title" class="sr-only">Nuestra filosofía: Precisión, Arte, Poder</h2>
-      <span class="manifesto-word manifesto-word-1" aria-hidden="true">PRECISIÓN</span>
-      <span class="manifesto-word blue manifesto-word-2" aria-hidden="true">ARTE</span>
-      <span class="manifesto-word gold manifesto-word-3" aria-hidden="true">PODER</span>
-      <p class="manifesto-year" aria-hidden="true">Desde 2016 · Calle San Juan Bosco, Rota</p>
+      <div class="manifesto-words-wrap">
+        <span class="manifesto-word manifesto-word-1" aria-hidden="true">PRECISIÓN</span>
+        <span class="manifesto-word blue manifesto-word-2" aria-hidden="true">ARTE</span>
+        <span class="manifesto-word gold manifesto-word-3" aria-hidden="true">PODER</span>
+      </div>
+    </div>
+
+    <div class="scene-text" data-from="0.58" data-to="0.95">
+      <p class="manifesto-year" aria-hidden="true" style="font-family:var(--font-serif);font-size:clamp(1.5rem,3.5vw,2.6rem);font-style:italic;color:var(--gold);margin:0 0 10px 0">
+        Desde 2016 · Calle San Juan Bosco, Rota
+      </p>
+      <p style="font-size:clamp(0.75rem,1.2vw,0.95rem);letter-spacing:0.35em;text-transform:uppercase;color:var(--gray-light)">
+        Barbería Premium &amp; Estética
+      </p>
     </div>
   </div>
 </section>
@@ -460,52 +476,47 @@
 <!-- ════════════════════════════════════════════════════════
      06 — ARTISTRY SHOWCASE
 ════════════════════════════════════════════════════════ -->
-<section id="artistry" aria-labelledby="artistry-title">
-  <div class="container">
-    <div class="artistry-grid">
+<section id="artistry" class="scene" aria-labelledby="artistry-title"
+  data-seq-path="assets/seq/hands/" data-seq-count="120"
+  data-seq-path-mobile="assets/seq/hands-m/" data-seq-count-mobile="60"
+  data-seq-ext="webp">
+  <div class="scene-sticky">
+    <img class="scene-poster" src="assets/images/clip-hands-poster.jpg" alt="Manos de barbero realizando corte de precisión" loading="lazy">
+    <video class="scene-fallback" autoplay muted loop playsinline poster="assets/images/clip-hands-poster.jpg" aria-hidden="true">
+      <source src="assets/videos/clips/clip_a_hands.mp4" type="video/mp4">
+    </video>
+    <canvas class="scene-canvas" aria-hidden="true"></canvas>
 
-      <div class="artistry-visual">
-        <video autoplay muted loop playsinline poster="assets/images/gallery-1.jpg"
-               aria-label="Video en primer plano de manos del barbero realizando un fade de precisión">
-          <source src="assets/videos/clips/clip_a_hands.mp4" type="video/mp4">
-        </video>
-        <span class="artistry-badge" aria-hidden="true">CORTES DE PRECISIÓN</span>
-      </div>
+    <div class="scene-text" data-from="0.05" data-to="0.50">
+      <span class="section-label" style="display:inline-block;margin-bottom:12px;color:var(--blue)">Cortes de precisión</span>
+      <h2 id="artistry-title" style="font-family:var(--font-display);font-size:clamp(3.2rem,8.5vw,7rem);line-height:0.88;text-transform:uppercase;color:var(--white);text-shadow:0 4px 30px rgba(0,0,0,0.95)">
+        Cada corte<br>es una<br><span style="color:var(--blue);text-shadow:0 0 60px var(--blue-glow)">obra maestra</span>
+      </h2>
+      <p style="margin-top:16px;font-size:clamp(0.95rem,1.8vw,1.25rem);color:rgba(240,237,232,0.85);max-width:640px;margin-left:auto;margin-right:auto;text-shadow:0 2px 10px rgba(0,0,0,0.9)">
+        Más de 8 años perfeccionando técnicas donde la tradición y la visión artística contemporánea se funden en cada trazo.
+      </p>
+    </div>
 
-      <div class="artistry-text">
-        <span class="section-label">El arte que llevamos en las manos</span>
-        <h2 id="artistry-title">
-          Cada corte<br>es una<br><span style="color:var(--blue)">obra maestra</span>
-        </h2>
-        <p>
-          Más de 8 años perfeccionando técnicas que combinan la tradición barbera
-          con la visión artística contemporánea. Cada cliente es un lienzo en blanco
-          donde expresamos precisión y creatividad.
-        </p>
-        <p>
-          Desde fades milimétricos hasta diseños escultóricos, en Jhon Suarez
-          Barber Shop elevamos el corte de pelo a la categoría de arte.
-        </p>
-        <div class="artistry-stats">
-          <div>
-            <div class="artistry-stat-num" data-target="8" data-suffix="+">0+</div>
-            <div class="artistry-stat-label">Años de experiencia</div>
-          </div>
-          <div>
-            <div class="artistry-stat-num" data-target="5000" data-suffix="+">0+</div>
-            <div class="artistry-stat-label">Clientes atendidos</div>
-          </div>
-          <div>
-            <div class="artistry-stat-num" data-target="30" data-suffix="+">0+</div>
-            <div class="artistry-stat-label">Servicios únicos</div>
-          </div>
-          <div>
-            <div class="artistry-stat-num" data-target="5" data-suffix=".0">0.0</div>
-            <div class="artistry-stat-label">Rating Booksy</div>
-          </div>
+    <div class="scene-text" data-from="0.55" data-to="0.95">
+      <span class="section-label" style="display:inline-block;margin-bottom:20px;color:var(--gold)">Excelencia comprobada</span>
+      <div class="artistry-stats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;max-width:850px;margin:0 auto">
+        <div style="background:rgba(5,5,5,0.7);padding:20px 16px;border-radius:var(--radius-md);border:1px solid rgba(0,170,255,0.15);backdrop-filter:blur(8px)">
+          <div class="artistry-stat-num" data-target="8" data-suffix="+" style="font-size:clamp(2.5rem,5vw,4.2rem);color:var(--white);font-family:var(--font-display)">0+</div>
+          <div class="artistry-stat-label" style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-top:6px">Años de experiencia</div>
+        </div>
+        <div style="background:rgba(5,5,5,0.7);padding:20px 16px;border-radius:var(--radius-md);border:1px solid rgba(0,170,255,0.15);backdrop-filter:blur(8px)">
+          <div class="artistry-stat-num" data-target="5000" data-suffix="+" style="font-size:clamp(2.5rem,5vw,4.2rem);color:var(--blue);font-family:var(--font-display);text-shadow:0 0 30px var(--blue-glow)">0+</div>
+          <div class="artistry-stat-label" style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-top:6px">Clientes atendidos</div>
+        </div>
+        <div style="background:rgba(5,5,5,0.7);padding:20px 16px;border-radius:var(--radius-md);border:1px solid rgba(0,170,255,0.15);backdrop-filter:blur(8px)">
+          <div class="artistry-stat-num" data-target="30" data-suffix="+" style="font-size:clamp(2.5rem,5vw,4.2rem);color:var(--white);font-family:var(--font-display)">0+</div>
+          <div class="artistry-stat-label" style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-top:6px">Servicios únicos</div>
+        </div>
+        <div style="background:rgba(5,5,5,0.7);padding:20px 16px;border-radius:var(--radius-md);border:1px solid rgba(201,160,50,0.25);backdrop-filter:blur(8px)">
+          <div class="artistry-stat-num" data-target="5" data-suffix=".0" style="font-size:clamp(2.5rem,5vw,4.2rem);color:var(--gold);font-family:var(--font-display)">0.0</div>
+          <div class="artistry-stat-label" style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-top:6px">Rating Booksy</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -679,6 +690,7 @@
 
 <!-- ── PREMIUM JS ───────────────────────────────────────────── -->
 <script src="assets/js/premium.js"></script>
+<script src="assets/js/scroll-scenes.js" defer></script>
 
 </body>
 </html>

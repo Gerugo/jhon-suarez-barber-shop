@@ -205,9 +205,9 @@ function initGSAP() {
     });
   }
 
-  /* MANIFESTO — PIN + SCRUB WORD REVEAL */
+  /* MANIFESTO — PIN + SCRUB WORD REVEAL (solo si no es escena canvas) */
   const manifesto = document.getElementById('manifesto');
-  if (manifesto && !REDUCE_MOTION) {
+  if (manifesto && !REDUCE_MOTION && !manifesto.classList.contains('scene')) {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: manifesto,
@@ -286,17 +286,23 @@ function initGSAP() {
     });
   }
 
-  /* ARTISTRY SECTION */
+  /* ARTISTRY SECTION (solo si no es escena canvas) */
   const artistry = document.getElementById('artistry');
-  if (artistry) {
-    gsap.from(artistry.querySelector('.artistry-visual'), {
-      opacity: 0, x: -80, duration: 1.3, ease: 'power4.out',
-      scrollTrigger: { trigger: artistry, start: 'top 72%' },
-    });
-    gsap.from(artistry.querySelectorAll('.artistry-text h2, .artistry-text p, .artistry-stat-num, .artistry-stat-label'), {
-      opacity: 0, x: 60, duration: 1, ease: 'power3.out', stagger: 0.1,
-      scrollTrigger: { trigger: artistry, start: 'top 68%' },
-    });
+  if (artistry && !artistry.classList.contains('scene')) {
+    const visual = artistry.querySelector('.artistry-visual');
+    if (visual) {
+      gsap.from(visual, {
+        opacity: 0, x: -80, duration: 1.3, ease: 'power4.out',
+        scrollTrigger: { trigger: artistry, start: 'top 72%' },
+      });
+    }
+    const texts = artistry.querySelectorAll('.artistry-text h2, .artistry-text p, .artistry-stat-num, .artistry-stat-label');
+    if (texts.length) {
+      gsap.from(texts, {
+        opacity: 0, x: 60, duration: 1, ease: 'power3.out', stagger: 0.1,
+        scrollTrigger: { trigger: artistry, start: 'top 68%' },
+      });
+    }
   }
 
   /* ESTETICA SECTION */

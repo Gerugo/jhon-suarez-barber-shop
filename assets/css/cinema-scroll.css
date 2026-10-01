@@ -43,6 +43,19 @@
   opacity: 1 !important; padding: 2rem 0;
 }
 
+/* Textos internos dentro de escenas */
+.scene .manifesto-word {
+  opacity: 1 !important;
+  transform: none !important;
+  display: block;
+}
+.scene .manifesto-label {
+  opacity: 1 !important;
+}
+.scene .manifesto-year {
+  opacity: 1 !important;
+}
+
 /* Letterbox sutil (capa cine) */
 .scene-sticky::before, .scene-sticky::after {
   content: ""; position: absolute; left: 0; right: 0; height: 6vh; z-index: 3;
@@ -57,4 +70,15 @@
 
 @media (prefers-reduced-motion: reduce) {
   .scene { height: auto; }
+}
+
+/* Fundido a negro antes del CTA final */
+#booking::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, #050505, transparent);
+  pointer-events: none;
+  z-index: 2;
 }
