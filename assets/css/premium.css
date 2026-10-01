@@ -258,18 +258,22 @@ html.lenis { height: auto; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: var(--z-nav);
-  padding: 24px 40px;
+  padding: 18px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.5s var(--ease-silk);
+  transition: all 0.4s var(--ease-silk);
+  background: linear-gradient(to bottom, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.6) 60%, transparent 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 #navbar.scrolled {
-  background: rgba(5,5,5,0.88);
+  background: rgba(5,5,5,0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 16px 40px;
-  border-bottom: 1px solid rgba(0,170,255,0.1);
+  padding: 14px 40px;
+  border-bottom: 1px solid rgba(0,170,255,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .nav-logo {
   font-family: var(--font-display);
@@ -344,6 +348,7 @@ html.lenis { height: auto; }
 #hero {
   position: relative;
   height: 100svh;
+  min-height: 580px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -382,24 +387,25 @@ html.lenis { height: auto; }
   position: relative;
   z-index: 3;
   text-align: center;
-  padding: 0 24px;
-  max-width: 1300px;
+  padding: clamp(90px, 14vh, 130px) 24px 30px;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
 }
 .hero-eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.5em;
+  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+  letter-spacing: 0.45em;
   text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 20px;
+  margin-bottom: clamp(8px, 1.6vh, 16px);
   opacity: 0;
   transform: translateY(20px);
 }
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(5rem, 16vw, 18rem);
-  line-height: 0.85;
-  letter-spacing: -0.01em;
+  font-size: clamp(3.2rem, min(8.5vw, 12vh), 7.8rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--white);
 }
@@ -414,9 +420,9 @@ html.lenis { height: auto; }
 .hero-tagline {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1rem, 2.5vw, 1.6rem);
-  color: rgba(240,237,232,0.65);
-  margin: 28px 0 52px;
+  font-size: clamp(0.95rem, 2vw, 1.35rem);
+  color: rgba(240,237,232,0.75);
+  margin: clamp(14px, 2.2vh, 24px) 0 clamp(18px, 3vh, 32px);
   opacity: 0;
   transform: translateY(20px);
 }
