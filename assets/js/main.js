@@ -87,25 +87,30 @@ async function loadServices() {
 
   // Build tabs
   tabsContainer.innerHTML = `<button class="tab-btn active" data-cat="all">Todos</button>` +
-    data.categories.map(c =>
-      `<button class="tab-btn" data-cat="${c.id}" style="--tab-color:${c.color}">${c.icon} ${c.name}</button>`
-    ).join('');
+    data.categories.map(c => {
+      const iconSvg = window.JSIcons ? window.JSIcons.get(c.icon) : '';
+      return `<button class="tab-btn" data-cat="${c.id}" style="--tab-color:${c.color}">${iconSvg} <span>${c.name}</span></button>`;
+    }).join('');
 
   // Build cards
   function renderCards(catId) {
     const cats = catId === 'all' ? data.categories : data.categories.filter(c => c.id === catId);
     const cards = cats.flatMap(c =>
-      c.services.map(s => `
+      c.services.map(s => {
+        const iconSvg = window.JSIcons ? window.JSIcons.get(s.icon || c.icon || 'scissors') : '';
+        const clockSvg = window.JSIcons ? window.JSIcons.get('clock') : '';
+        const calSvg = window.JSIcons ? window.JSIcons.get('calendar') : '';
+        return `
         <article class="service-card reveal" tabindex="0">
           <div class="service-card-inner">
             <div class="service-front">
               <div>
-                <div class="service-emoji">${s.emoji}</div>
+                <div class="service-icon-wrap">${iconSvg}</div>
                 <div class="service-name">${s.name}</div>
               </div>
               <div class="service-meta">
                 <span class="service-price">${s.price}</span>
-                <span class="service-duration">⏱ ${s.duration}</span>
+                <span class="service-duration">${clockSvg} ${s.duration}</span>
               </div>
             </div>
             <div class="service-back">
@@ -113,13 +118,14 @@ async function loadServices() {
               <div>
                 <div class="service-price-lg">${s.price}</div>
                 <a href="${BOOKSY_URL}" target="_blank" rel="noopener" class="book-chip">
-                  📅 Reservar cita
+                  ${calSvg} Reservar cita
                 </a>
               </div>
             </div>
           </div>
         </article>
-      `)
+      `;
+      })
     ).join('');
 
     grid.innerHTML = cards;
@@ -203,12 +209,16 @@ const soundBtn  = document.getElementById('hero-sound-toggle');
 const soundIcon = soundBtn?.querySelector('.sound-icon');
 
 if (heroVideo && soundBtn) {
-  soundBtn.addEventListener('click', () => {
-    heroVideo.muted = !heroVideo.muted;
-    if (soundIcon) {
-      soundIcon.textContent = heroVideo.muted ? '🔇' : '🔊';
+  const updateSoundIcon = () => {
+    if (soundIcon && window.JSIcons) {
+      soundIcon.innerHTML = window.JSIcons.get(heroVideo.muted ? 'volumeX' : 'volume2');
     }
     soundBtn.title = heroVideo.muted ? 'Activar sonido' : 'Silenciar sonido';
+  };
+  updateSoundIcon();
+  soundBtn.addEventListener('click', () => {
+    heroVideo.muted = !heroVideo.muted;
+    updateSoundIcon();
   });
 }
 

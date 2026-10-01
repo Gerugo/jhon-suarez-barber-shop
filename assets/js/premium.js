@@ -372,9 +372,15 @@ const heroVid   = document.querySelector('.hero-video');
 const soundBtn  = document.getElementById('hero-sound-btn');
 const soundIcon = soundBtn?.querySelector('.sound-icon');
 if (heroVid && soundBtn) {
+  const updateSound = () => {
+    if (soundIcon && window.JSIcons) {
+      soundIcon.innerHTML = window.JSIcons.get(heroVid.muted ? 'volumeX' : 'volume2');
+    }
+  };
+  updateSound();
   soundBtn.addEventListener('click', () => {
     heroVid.muted = !heroVid.muted;
-    if (soundIcon) soundIcon.textContent = heroVid.muted ? '🔇' : '🔊';
+    updateSound();
   });
 }
 
