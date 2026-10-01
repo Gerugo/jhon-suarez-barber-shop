@@ -1,0 +1,60 @@
+/* ══════════════════════════════════════════════════════════════
+   CINEMA SCROLL — Canvas frame scrubbing & cinematic layer
+   Jhon Suarez Barber Shop
+   ══════════════════════════════════════════════════════════════ */
+
+/* ===== Escenas scrub ===== */
+.scene { position: relative; height: 300vh; }
+@media (max-width: 768px) { .scene { height: 200vh; } }
+
+.scene-sticky {
+  position: sticky; top: 0;
+  height: 100vh; height: 100svh;
+  overflow: hidden;
+  background: #050505;
+}
+.scene-poster, .scene-fallback, .scene-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+.scene-canvas { opacity: 0; transition: opacity .4s ease; }
+.scene--ready .scene-canvas { opacity: 1; }
+.scene--ready .scene-poster,
+.scene--ready .scene-fallback { opacity: 0; pointer-events: none; }
+
+.scene-text {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 900px); text-align: center;
+  opacity: 0; will-change: opacity, transform;
+  pointer-events: none;
+  z-index: 4;
+}
+.scene-text a, .scene-text button { pointer-events: auto; }
+
+/* Modo estático: sin frames, reduced-motion o error de carga */
+.scene--static { height: auto; }
+.scene--static .scene-sticky {
+  position: relative; height: auto; min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.scene--static .scene-canvas { display: none; }
+.scene--static .scene-text {
+  position: relative; left: auto; top: auto; transform: none !important;
+  opacity: 1 !important; padding: 2rem 0;
+}
+
+/* Letterbox sutil (capa cine) */
+.scene-sticky::before, .scene-sticky::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 6vh; z-index: 3;
+  pointer-events: none;
+}
+.scene-sticky::before { top: 0;    background: linear-gradient(#050505, transparent); }
+.scene-sticky::after  { bottom: 0; background: linear-gradient(transparent, #050505); }
+
+@media (max-width: 768px) {
+  .scene-sticky::before, .scene-sticky::after { height: 3vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene { height: auto; }
+}
