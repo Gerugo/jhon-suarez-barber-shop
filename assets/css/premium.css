@@ -89,6 +89,7 @@ html.lenis { height: auto; }
   100%{ transform: translate(0,0); }
 }
 @media (prefers-reduced-motion: reduce) { .grain::after { animation: none; } }
+@media (max-width: 900px), (pointer: coarse) { .grain { display: none !important; } }
 
 /* ── PROGRESS BAR ───────────────────────────────────────────── */
 #progress-bar {
@@ -1212,8 +1213,18 @@ footer.premium-footer {
 }
 @media (max-width: 768px) {
   :root { --section-pad: 60px; }
-  #navbar { padding: 18px 20px; }
-  #navbar.scrolled { padding: 12px 20px; }
+  #navbar {
+    padding: 16px 20px;
+    background: rgba(5,5,5,0.92);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #navbar.scrolled {
+    padding: 12px 20px;
+    background: rgba(5,5,5,0.97);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .nav-links {
     display: none;
     flex-direction: column;

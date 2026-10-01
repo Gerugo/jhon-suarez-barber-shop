@@ -222,6 +222,21 @@ if (heroVideo && soundBtn) {
   });
 }
 
+// ── Pause off-screen videos ──────────────────────────────────
+if ('IntersectionObserver' in window) {
+  const vidObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const vid = entry.target;
+      if (entry.isIntersecting) {
+        vid.play().catch(() => {});
+      } else {
+        vid.pause();
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('video').forEach(v => vidObs.observe(v));
+}
+
 // ── 3D Interactive Tilt on Cursor Move ──────────────────────
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(pointer: fine)').matches) {
   document.querySelectorAll('.tilt-card').forEach(card => {

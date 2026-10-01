@@ -86,13 +86,16 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
     };
   }
 
+  const isMobile = window.innerWidth < 768;
   resize();
-  particles = Array.from({ length: 100 }, mkParticle);
+  particles = Array.from({ length: isMobile ? 40 : 100 }, mkParticle);
   window.addEventListener('resize', resize, { passive: true });
 
   ctx = canvas.getContext('2d');
 
+  let isCanvasActive = true;
   function loop() {
+    if (!isCanvasActive) return;
     ctx.clearRect(0, 0, w, h);
     particles.forEach((p, i) => {
       p.x += p.dx; p.y += p.dy; p.alpha -= 0.0007;
@@ -110,11 +113,29 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
     animId = requestAnimationFrame(loop);
   }
 
+  // Pause when off-screen to free mobile GPU/CPU
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isCanvasActive = entry.isIntersecting;
+        cancelAnimationFrame(animId);
+        if (isCanvasActive) loop();
+      });
+    }, { threshold: 0.05 });
+    observer.observe(canvas);
+  } else {
+    loop();
+  }
+
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) cancelAnimationFrame(animId);
-    else loop();
+    if (document.hidden) {
+      isCanvasActive = false;
+      cancelAnimationFrame(animId);
+    } else {
+      isCanvasActive = true;
+      loop();
+    }
   });
-  loop();
 })();
 
 // ── HERO REVEAL ──────────────────────────────────────────────
@@ -143,18 +164,18 @@ let lenis;
 function initLenis() {
   if (typeof Lenis === 'undefined') return;
   lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.1,
     easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: 'vertical',
     smoothWheel: true,
     wheelMultiplier: 0.85,
-    touchMultiplier: 1.4,
+    touchMultiplier: 1.0,
   });
 
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(time => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(500, 33);
   } else {
     (function raf(time) {
       lenis.raf(time);
@@ -382,6 +403,22 @@ if (heroVid && soundBtn) {
     heroVid.muted = !heroVid.muted;
     updateSound();
   });
+}
+
+// ── PAUSE OFF-SCREEN VIDEOS ──────────────────────────────────
+if ('IntersectionObserver' in window) {
+  const vidObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const vid = entry.target;
+      if (entry.isIntersecting) {
+        vid.play().catch(() => {});
+      } else {
+        vid.pause();
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('video').forEach(v => vidObserver.observe(v));
 }
 
 // ── MOBILE NAV ───────────────────────────────────────────────

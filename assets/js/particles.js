@@ -24,15 +24,30 @@
     };
   }
 
+  let isCanvasActive = true;
   function init() {
     ctx = canvas.getContext('2d');
     resize();
-    particles = Array.from({ length: 120 }, createParticle);
-    window.addEventListener('resize', resize);
-    loop();
+    const isMobile = window.innerWidth < 768;
+    particles = Array.from({ length: isMobile ? 40 : 120 }, createParticle);
+    window.addEventListener('resize', resize, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isCanvasActive = entry.isIntersecting;
+          cancelAnimationFrame(animId);
+          if (isCanvasActive) loop();
+        });
+      }, { threshold: 0.05 });
+      observer.observe(canvas);
+    } else {
+      loop();
+    }
   }
 
   function loop() {
+    if (!isCanvasActive) return;
     ctx.clearRect(0, 0, w, h);
     particles.forEach((p, i) => {
       p.x += p.dx;
@@ -54,10 +69,15 @@
     animId = requestAnimationFrame(loop);
   }
 
-  // Pause when not visible
+  // Pause when tab not visible
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) cancelAnimationFrame(animId);
-    else loop();
+    if (document.hidden) {
+      isCanvasActive = false;
+      cancelAnimationFrame(animId);
+    } else {
+      isCanvasActive = true;
+      loop();
+    }
   });
 
   // Reduce on prefers-reduced-motion
