@@ -463,16 +463,25 @@ if ('IntersectionObserver' in window) {
 // ── MOBILE NAV ───────────────────────────────────────────────
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks  = document.querySelector('.nav-links');
-hamburger?.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active').toString());
-  navLinks?.classList.toggle('open');
-});
+
+function toggleMobileMenu(open) {
+  const isOpen = open !== undefined ? open : !hamburger?.classList.contains('active');
+  hamburger?.classList.toggle('active', isOpen);
+  hamburger?.setAttribute('aria-expanded', isOpen.toString());
+  navLinks?.classList.toggle('open', isOpen);
+  document.body.classList.toggle('nav-open', isOpen);
+}
+
+hamburger?.addEventListener('click', () => toggleMobileMenu());
+
 navLinks?.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger?.classList.remove('active');
-    navLinks.classList.remove('open');
-  });
+  a.addEventListener('click', () => toggleMobileMenu(false));
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && hamburger?.classList.contains('active')) {
+    toggleMobileMenu(false);
+  }
 });
 
 // ── GALLERY LIGHTBOX ─────────────────────────────────────────

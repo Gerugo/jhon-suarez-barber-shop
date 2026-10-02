@@ -91,34 +91,43 @@
      NAVBAR
 ════════════════════════════════════════════════════════ -->
 <nav id="navbar" aria-label="Navegación principal">
-  <a href="#hero" class="nav-logo" aria-label="Jhon Suarez Barber Shop — Inicio">
-    <div class="js-badge" aria-hidden="true">JS</div>
-    <span>JHON SUAREZ</span>
-  </a>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Jhon Suarez Barber Shop — Inicio">
+      <div class="js-badge" aria-hidden="true">JS</div>
+      <span>JHON SUAREZ</span>
+    </a>
 
-  <ul class="nav-links" id="nav-links" role="list">
-    <li><a href="#about-cinema" data-i18n="nav_about">Nosotros</a></li>
-    <li><a href="#services-cinema" data-i18n="nav_services">Servicios</a></li>
-    <li><a href="#gallery-cinema" data-i18n="nav_gallery">Galería</a></li>
-    <li><a href="#estetica-cinema" data-i18n="nav_estetica">Estética</a></li>
-    <li class="nav-lang-item">
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#about-cinema" data-i18n="nav_about">Nosotros</a></li>
+      <li><a href="#services-cinema" data-i18n="nav_services">Servicios</a></li>
+      <li><a href="#gallery-cinema" data-i18n="nav_gallery">Galería</a></li>
+      <li><a href="#estetica-cinema" data-i18n="nav_estetica">Estética</a></li>
+      <li class="nav-lang-desktop">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li class="nav-cta-item">
+        <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
+           target="_blank" rel="noopener" class="nav-cta" data-i18n="nav_cta">
+          Reservar Cita
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav-mobile-actions">
       <div class="lang-switch" role="group" aria-label="Idioma / Language">
         <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
         <span class="lang-sep">|</span>
         <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
-    </li>
-    <li>
-      <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
-         target="_blank" rel="noopener" class="nav-cta" data-i18n="nav_cta">
-        Reservar Cita
-      </a>
-    </li>
-  </ul>
-
-  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-    <span></span><span></span><span></span>
-  </button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
 </nav>
 
 <!-- ════════════════════════════════════════════════════════
@@ -489,9 +498,9 @@
     </div>
 
     <div style="text-align:center;margin-top:48px;">
-      <a href="https://www.instagram.com/johnsuarezbarbershop/" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.95rem;padding:14px 32px;gap:10px">
+      <a href="https://www.instagram.com/johnsuarezbarbershop/" target="_blank" rel="noopener" class="btn btn-outline btn-instagram" style="font-size:0.95rem;padding:12px 24px;gap:10px">
         <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        Ver más cortes en Instagram @johnsuarezbarbershop
+        <span>Ver más cortes en Instagram <span style="color:var(--blue)">@johnsuarezbarbershop</span></span>
       </a>
     </div>
   </div>

@@ -61,6 +61,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23050505'/><circle cx='50' cy='50' r='42' stroke='%2300aaff' stroke-width='4' fill='none'/><text x='50' y='65' font-family='Arial,sans-serif' font-weight='900' font-size='42' fill='%23c9a032' text-anchor='middle'>JS</text></svg>">
+</head>
 <body>
 
 <!-- ── GLOBAL AMBIENT PARTICLES ─────────────────────────────── -->
@@ -86,20 +87,20 @@
         <span class="js-badge">JS</span> BARBER SHOP
       </a>
 
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#about" data-i18n="nav_about">Nosotros</a></li>
         <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
         <li><a href="#gallery" data-i18n="nav_gallery">Galería</a></li>
         <li><a href="#reviews" data-i18n="nav_reviews">Reseñas</a></li>
         <li><a href="#location" data-i18n="nav_location">Ubicación</a></li>
-        <li class="nav-lang-item">
+        <li class="nav-lang-desktop">
           <div class="lang-switch" role="group" aria-label="Idioma / Language">
             <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
             <span class="lang-sep">|</span>
             <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
           </div>
         </li>
-        <li>
+        <li class="nav-cta-item">
           <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
              target="_blank" rel="noopener" class="btn btn-primary nav-cta" data-i18n="nav_cta">
             Reservar Cita
@@ -107,9 +108,16 @@
         </li>
       </ul>
 
-      <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-mobile-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 </header>
@@ -351,9 +359,9 @@
     </div>
 
     <div style="text-align:center;margin-top:40px" class="reveal">
-      <a href="https://www.instagram.com/johnsuarezbarbershop/" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.95rem;padding:12px 28px;gap:10px">
+      <a href="https://www.instagram.com/johnsuarezbarbershop/" target="_blank" rel="noopener" class="btn btn-outline btn-instagram" style="font-size:0.95rem;padding:12px 24px;gap:10px">
         <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        Ver más trabajos en Instagram @johnsuarezbarbershop
+        <span>Ver más trabajos en Instagram <span style="color:var(--blue)">@johnsuarezbarbershop</span></span>
       </a>
     </div>
   </div>
