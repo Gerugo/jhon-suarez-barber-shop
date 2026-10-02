@@ -30,14 +30,27 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23050505'/><circle cx='50' cy='50' r='42' stroke='%2300aaff' stroke-width='4' fill='none'/><text x='50' y='65' font-family='Arial,sans-serif' font-weight='900' font-size='42' fill='%23c9a032' text-anchor='middle'>JS</text></svg>">
 
+  <link rel="canonical" href="https://jhonsuarez.com/premium.html">
+
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HairSalon",
     "name": "Jhon Suarez Barber Shop",
+    "image": "https://jhonsuarez.com/assets/images/barberia-real.jpg",
     "description": "Barbería de lujo y estética en Rota (Cádiz). Cortes de precisión, fades artísticos y bienestar total.",
-    "url": "https://gerugo.github.io/jhon-suarez-barber-shop/premium.html",
+    "url": "https://jhonsuarez.com/premium.html",
+    "telephone": "+34613784171",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR, USD",
+    "paymentAccepted": "Cash, Credit Card, Bizum",
+    "hasMap": "https://maps.google.com/?q=Calle+San+Juan+Bosco+5,+11520+Rota,+C%C3%A1diz",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.6214,
+      "longitude": -6.3575
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Calle San Juan Bosco, 5, Local 2",
@@ -46,8 +59,38 @@
       "postalCode": "11520",
       "addressCountry": "ES"
     },
-    "openingHours": ["Mo-Fr 10:00-14:00", "Mo-Fr 16:00-20:00", "Sa 10:00-16:00", "Su 12:00-16:00"],
-    "telephone": "+34613784171",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "10:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "16:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "12:00",
+        "closes": "16:00"
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Rota" },
+      { "@type": "AdministrativeArea", "name": "Base Naval de Rota / US Naval Station Rota" },
+      { "@type": "AdministrativeArea", "name": "Costa Ballena" },
+      { "@type": "City", "name": "El Puerto de Santa María" }
+    ],
     "sameAs": [
       "https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones",
       "https://www.instagram.com/johnsuarezbarbershop/"
