@@ -114,13 +114,212 @@
 <section id="hero" aria-label="Bienvenida">
 
   <div class="hero-bg-fallback" aria-hidden="true"></div>
-  <video class="hero-video" autoplay muted loop playsinline
+  <video class="hero-video" id="hero-video" autoplay muted loop playsinline
          poster="assets/images/hero-bg.jpg"
-         aria-label="Video cinemático del interior de Jhon Suarez Barber Shop">
+         preload="metadata"
+         aria-label="Película cinemática de Jhon Suarez Barber Shop">
     <source src="assets/videos/hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── 2026 DIRECTOR HUD & SPATIAL TELEMETRY ── -->
+  <div class="director-hud" id="director-hud" aria-label="Control cinemático interactivo">
+    <!-- Top Telemetry -->
+    <div class="hud-top-telemetry" aria-hidden="true">
+      <div class="hud-tele-left">
+        <span class="hud-rec-dot"></span>
+        <span class="hud-mono hud-rec-label">REC</span>
+        <span class="hud-mono hud-timecode" id="hud-timecode">00:00.0</span>
+        <span class="hud-mono hud-time-total">/ 00:30.0</span>
+      </div>
+      <div class="hud-tele-center" id="hud-scene-tag">
+        <span class="hud-mono hud-scene-num">SCENE 01 / 06</span>
+        <span class="hud-mono hud-scene-sep">//</span>
+        <span class="hud-mono hud-scene-name">ENTRADA NOIR</span>
+      </div>
+      <div class="hud-tele-right">
+        <span class="hud-pill">WAN 3.0</span>
+        <span class="hud-pill">30 FPS</span>
+        <span class="hud-pill">ROTA</span>
+      </div>
+    </div>
+
+    <!-- Spatial Hotspots (Synced to Video Scenes) -->
+    <div class="hud-hotspots-layer" id="hud-hotspots" aria-live="polite">
+      <!-- Hotspot 01: Entrada (0s - 5s) -->
+      <div class="hud-hotspot active" data-scene="0" data-start="0" data-end="5" style="--hx: 74%; --hy: 35%;">
+        <button class="hud-reticle" aria-label="Ver detalles: Luces Hexagonales Noir" aria-expanded="true">
+          <span class="hud-reticle-ring"></span>
+          <span class="hud-reticle-cross"></span>
+          <span class="hud-reticle-core"></span>
+        </button>
+        <div class="hud-callout hud-callout-left">
+          <div class="hud-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 40"><path d="M80,0 L45,24 L0,24"/></svg>
+          </div>
+          <div class="hud-card">
+            <div class="hud-card-header">
+              <span class="hud-badge-dot"></span>
+              <span class="hud-card-cat">01 // ESPACIO JS</span>
+            </div>
+            <h3 class="hud-card-title">Luces Hexagonales Noir</h3>
+            <p class="hud-card-desc">Atmósfera oscura con iluminación técnica en panal de abeja y diseño acústico inmersivo.</p>
+            <a href="#about-cinema" class="hud-card-link">Explorar Salón</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotspot 02: Herramientas (5s - 10s) -->
+      <div class="hud-hotspot" data-scene="1" data-start="5" data-end="10" style="--hx: 76%; --hy: 38%;">
+        <button class="hud-reticle" aria-label="Ver detalles: Herramientas de Autor" aria-expanded="false">
+          <span class="hud-reticle-ring"></span>
+          <span class="hud-reticle-cross"></span>
+          <span class="hud-reticle-core"></span>
+        </button>
+        <div class="hud-callout hud-callout-left">
+          <div class="hud-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 40"><path d="M80,0 L45,24 L0,24"/></svg>
+          </div>
+          <div class="hud-card">
+            <div class="hud-card-header">
+              <span class="hud-badge-dot gold"></span>
+              <span class="hud-card-cat">02 // INSTRUMENTAL</span>
+            </div>
+            <h3 class="hud-card-title">Herramientas de Autor</h3>
+            <p class="hud-card-desc">Tijeras forjadas a mano, navajas de acero templado y desinfección mediante vapor ozonizado.</p>
+            <a href="#services-cinema" class="hud-card-link">Ver Instrumental</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotspot 03: Skin Fades (10s - 15s) -->
+      <div class="hud-hotspot" data-scene="2" data-start="10" data-end="15" style="--hx: 24%; --hy: 40%;">
+        <button class="hud-reticle" aria-label="Ver detalles: Skin Fade Milimétrico" aria-expanded="false">
+          <span class="hud-reticle-ring"></span>
+          <span class="hud-reticle-cross"></span>
+          <span class="hud-reticle-core"></span>
+        </button>
+        <div class="hud-callout hud-callout-right">
+          <div class="hud-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 40"><path d="M0,0 L35,24 L80,24"/></svg>
+          </div>
+          <div class="hud-card">
+            <div class="hud-card-header">
+              <span class="hud-badge-dot"></span>
+              <span class="hud-card-cat">03 // TÉCNICA PURA</span>
+            </div>
+            <h3 class="hud-card-title">Skin Fade Milimétrico</h3>
+            <p class="hud-card-desc">Degradado artesanal a piel limpia. Transición invisible sin líneas, esculpido con navaja y tijera.</p>
+            <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones" target="_blank" rel="noopener" class="hud-card-link">Reservar Corte (15€)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotspot 04: Ritual Barba (15s - 20s) -->
+      <div class="hud-hotspot" data-scene="3" data-start="15" data-end="20" style="--hx: 72%; --hy: 42%;">
+        <button class="hud-reticle" aria-label="Ver detalles: Ritual de Barba Clásica" aria-expanded="false">
+          <span class="hud-reticle-ring"></span>
+          <span class="hud-reticle-cross"></span>
+          <span class="hud-reticle-core"></span>
+        </button>
+        <div class="hud-callout hud-callout-left">
+          <div class="hud-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 40"><path d="M80,0 L45,24 L0,24"/></svg>
+          </div>
+          <div class="hud-card">
+            <div class="hud-card-header">
+              <span class="hud-badge-dot gold"></span>
+              <span class="hud-card-cat">04 // TRADICIÓN &amp; SPA</span>
+            </div>
+            <h3 class="hud-card-title">Ritual Barba &amp; Toalla Caliente</h3>
+            <p class="hud-card-desc">Vaporización, bálsamos botánicos nutritivos, perfilado a navaja clásica y toalla fría de cierre.</p>
+            <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones" target="_blank" rel="noopener" class="hud-card-link">Reservar Barba (10€)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotspot 05: Alejandra Studio (20s - 25s) -->
+      <div class="hud-hotspot" data-scene="4" data-start="20" data-end="25" style="--hx: 25%; --hy: 38%;">
+        <button class="hud-reticle" aria-label="Ver detalles: Alejandra Studio Belleza" aria-expanded="false">
+          <span class="hud-reticle-ring"></span>
+          <span class="hud-reticle-cross"></span>
+          <span class="hud-reticle-core"></span>
+        </button>
+        <div class="hud-callout hud-callout-right">
+          <div class="hud-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 40"><path d="M0,0 L35,24 L80,24"/></svg>
+          </div>
+          <div class="hud-card">
+            <div class="hud-card-header">
+              <span class="hud-badge-dot purple"></span>
+              <span class="hud-card-cat">05 // BIENESTAR</span>
+            </div>
+            <h3 class="hud-card-title">Alejandra Studio Estética</h3>
+            <p class="hud-card-desc">Cabina privada de tratamientos faciales de vanguardia, micropigmentación, cejas, pestañas y bienestar.</p>
+            <a href="#estetica-cinema" class="hud-card-link">Conocer Alejandra Studio</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotspot 06: Sillón JS Vintage (25s - 30s) -->
+      <div class="hud-hotspot" data-scene="5" data-start="25" data-end="30" style="--hx: 74%; --hy: 38%;">
+        <button class="hud-reticle" aria-label="Ver detalles: Sillón JS Signature" aria-expanded="false">
+          <span class="hud-reticle-ring"></span>
+          <span class="hud-reticle-cross"></span>
+          <span class="hud-reticle-core"></span>
+        </button>
+        <div class="hud-callout hud-callout-left">
+          <div class="hud-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 40"><path d="M80,0 L45,24 L0,24"/></svg>
+          </div>
+          <div class="hud-card">
+            <div class="hud-card-header">
+              <span class="hud-badge-dot"></span>
+              <span class="hud-card-cat">06 // CONFORT VIP</span>
+            </div>
+            <h3 class="hud-card-title">Sillón JS Signature</h3>
+            <p class="hud-card-desc">Tapicería de cuero vintage restaurada, máxima ergonomía y el emblema JS en resplandor azul.</p>
+            <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones" target="_blank" rel="noopener" class="hud-card-link">Reservar en Booksy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Director Timeline & Scene Switcher -->
+    <div class="hud-bottom-timeline">
+      <div class="hud-timeline-bar" id="hud-timeline-bar" role="slider" aria-label="Línea de tiempo del video" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0">
+        <div class="hud-timeline-fill" id="hud-timeline-fill"></div>
+      </div>
+
+      <div class="hud-scene-pills" role="tablist" aria-label="Selección de planos cinemáticos">
+        <button class="hud-pill-btn active" role="tab" aria-selected="true" data-scene="0" data-time="0">
+          <span class="hud-pill-idx">01</span>
+          <span class="hud-pill-title">ENTRADA</span>
+        </button>
+        <button class="hud-pill-btn" role="tab" aria-selected="false" data-scene="1" data-time="5">
+          <span class="hud-pill-idx">02</span>
+          <span class="hud-pill-title">INSTRUMENTOS</span>
+        </button>
+        <button class="hud-pill-btn" role="tab" aria-selected="false" data-scene="2" data-time="10">
+          <span class="hud-pill-idx">03</span>
+          <span class="hud-pill-title">SKIN FADES</span>
+        </button>
+        <button class="hud-pill-btn" role="tab" aria-selected="false" data-scene="3" data-time="15">
+          <span class="hud-pill-idx">04</span>
+          <span class="hud-pill-title">RITUAL BARBA</span>
+        </button>
+        <button class="hud-pill-btn" role="tab" aria-selected="false" data-scene="4" data-time="20">
+          <span class="hud-pill-idx">05</span>
+          <span class="hud-pill-title">STUDIO</span>
+        </button>
+        <button class="hud-pill-btn" role="tab" aria-selected="false" data-scene="5" data-time="25">
+          <span class="hud-pill-idx">06</span>
+          <span class="hud-pill-title">SILLÓN JS</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <div class="hero-content">
     <p class="hero-eyebrow">Rota, Cádiz · Barbería Premium · Est. 2016</p>
@@ -142,18 +341,12 @@
         <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Reservar Cita
       </a>
-      <a href="#manifesto" class="btn btn-outline">Descubrir ↓</a>
+      <a href="#manifesto" class="btn btn-outline">
+        <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        Descubrir
+      </a>
     </div>
   </div>
-
-  <div class="hero-scroll-hint" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
-  </div>
-
-  <button id="hero-sound-btn" class="hero-sound-btn" aria-label="Activar o silenciar sonido">
-    <span class="sound-icon"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></span>
-  </button>
 </section>
 
 <!-- ════════════════════════════════════════════════════════
