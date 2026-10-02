@@ -85,31 +85,41 @@ async function loadServices() {
     return;
   }
 
-  const defaultCategory = 'barberia';
+  let activeCategory = 'barberia';
 
   // Build tabs
-  tabsContainer.innerHTML = `<button class="tab-btn${defaultCategory === 'all' ? ' active' : ''}" data-cat="all">Todos</button>` +
-    data.categories.map(c => {
-      const iconSvg = window.JSIcons ? window.JSIcons.get(c.icon) : '';
-      const isActive = c.id === defaultCategory ? ' active' : '';
-      return `<button class="tab-btn${isActive}" data-cat="${c.id}" style="--tab-color:${c.color}">${iconSvg} <span>${c.name}</span></button>`;
-    }).join('');
+  function buildTabs() {
+    const lang = window.JSI18n ? window.JSI18n.getLang() : 'es';
+    const allLabel = window.JSI18n ? window.JSI18n.t('tab_all') : 'Todos';
+    tabsContainer.innerHTML = `<button class="tab-btn${activeCategory === 'all' ? ' active' : ''}" data-cat="all">${allLabel}</button>` +
+      data.categories.map(c => {
+        const iconSvg = window.JSIcons ? window.JSIcons.get(c.icon) : '';
+        const isActive = c.id === activeCategory ? ' active' : '';
+        const catName = (lang === 'en' && c.name_en) ? c.name_en : c.name;
+        return `<button class="tab-btn${isActive}" data-cat="${c.id}" style="--tab-color:${c.color}">${iconSvg} <span>${catName}</span></button>`;
+      }).join('');
+  }
 
   // Build cards
   function renderCards(catId) {
+    activeCategory = catId;
+    const lang = window.JSI18n ? window.JSI18n.getLang() : 'es';
+    const bookLabel = window.JSI18n ? window.JSI18n.t('book_chip') : 'Reservar cita';
     const cats = catId === 'all' ? data.categories : data.categories.filter(c => c.id === catId);
     const cards = cats.flatMap(c =>
       c.services.map(s => {
         const iconSvg = window.JSIcons ? window.JSIcons.get(s.icon || c.icon || 'scissors') : '';
         const clockSvg = window.JSIcons ? window.JSIcons.get('clock') : '';
         const calSvg = window.JSIcons ? window.JSIcons.get('calendar') : '';
+        const sName = (lang === 'en' && s.name_en) ? s.name_en : s.name;
+        const sDesc = (lang === 'en' && s.desc_en) ? s.desc_en : s.desc;
         return `
         <article class="service-card reveal" tabindex="0">
           <div class="service-card-inner">
             <div class="service-front">
               <div>
                 <div class="service-icon-wrap">${iconSvg}</div>
-                <div class="service-name">${s.name}</div>
+                <div class="service-name">${sName}</div>
               </div>
               <div class="service-meta">
                 <span class="service-price">${s.price}</span>
@@ -117,11 +127,11 @@ async function loadServices() {
               </div>
             </div>
             <div class="service-back">
-              <p class="service-desc">${s.desc}</p>
+              <p class="service-desc">${sDesc}</p>
               <div>
                 <div class="service-price-lg">${s.price}</div>
                 <a href="${BOOKSY_URL}" target="_blank" rel="noopener" class="book-chip">
-                  ${calSvg} Reservar cita
+                  ${calSvg} ${bookLabel}
                 </a>
               </div>
             </div>
@@ -140,7 +150,8 @@ async function loadServices() {
     });
   }
 
-  renderCards(defaultCategory);
+  buildTabs();
+  renderCards(activeCategory);
 
   // Tab click
   tabsContainer.addEventListener('click', e => {
@@ -149,8 +160,13 @@ async function loadServices() {
     tabsContainer.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderCards(btn.dataset.cat);
-    // Scroll grid into view smoothly
     grid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  // Listen for language switch
+  window.addEventListener('js_lang_changed', () => {
+    buildTabs();
+    renderCards(activeCategory);
   });
 }
 

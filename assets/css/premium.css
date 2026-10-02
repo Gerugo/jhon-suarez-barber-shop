@@ -179,33 +179,80 @@ html.lenis { height: auto; }
 .container { width: var(--container); margin-inline: auto; }
 
 .btn {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   border-radius: 50px;
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.05rem;
   letter-spacing: 0.1em;
-  padding: 14px 36px;
+  padding: 15px 36px;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   text-decoration: none;
   transition: all 0.3s var(--ease-film);
+  line-height: 1.2;
 }
 .btn-primary {
   background: var(--blue);
   color: var(--black);
+  border-color: transparent;
   box-shadow: 0 0 30px var(--blue-glow);
 }
 .btn-primary:hover {
   background: var(--gold);
+  border-color: transparent;
   box-shadow: 0 0 40px rgba(201,160,50,0.5);
   transform: translateY(-2px) scale(1.02);
 }
 .btn-outline {
-  background: transparent;
+  background: rgba(255,255,255,0.04);
   border: 1px solid rgba(240,237,232,0.3);
   color: var(--white);
 }
-.btn-outline:hover { border-color: var(--blue); color: var(--blue); box-shadow: 0 0 20px var(--blue-glow); }
+.btn-outline:hover {
+  border-color: var(--blue);
+  background: rgba(0,170,255,0.1);
+  color: var(--blue);
+  box-shadow: 0 0 20px var(--blue-glow);
+  transform: translateY(-2px);
+}
+
+/* ── Language Switcher ── */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  padding: 3px 5px;
+  gap: 2px;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  color: rgba(240, 237, 232, 0.6);
+  padding: 4px 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+.lang-btn:hover {
+  color: var(--white);
+}
+.lang-btn.active {
+  background: var(--blue);
+  color: var(--black);
+  box-shadow: 0 0 10px var(--blue-glow);
+}
+.lang-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.65rem;
+  user-select: none;
+}
 
 /* ── Vector Icons Pack ── */
 .js-icon {
@@ -222,7 +269,7 @@ html.lenis { height: auto; }
 .btn .js-icon {
   width: 1.2em;
   height: 1.2em;
-  vertical-align: -0.18em;
+  vertical-align: middle;
 }
 .js-icon-lg {
   width: 1.6rem;

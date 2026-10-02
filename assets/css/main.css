@@ -117,18 +117,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* ── CTA Button ── */
 .btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 36px;
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.05em;
+  line-height: 1.2;
   transition: var(--transition);
   white-space: nowrap;
+  box-sizing: border-box;
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--blue), #0077cc);
   color: #fff;
+  border: 1px solid transparent;
   box-shadow: 0 0 30px var(--blue-glow);
 }
 .btn-primary:hover {
@@ -136,13 +139,54 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   box-shadow: 0 0 50px var(--blue-glow), 0 12px 30px rgba(0,170,255,0.3);
 }
 .btn-outline {
-  border: 1px solid var(--gray);
+  border: 1px solid rgba(255,255,255,0.25);
   color: var(--white);
+  background: rgba(255,255,255,0.04);
 }
 .btn-outline:hover {
   border-color: var(--blue);
   color: var(--blue);
+  background: rgba(0,170,255,0.08);
   box-shadow: 0 0 20px var(--blue-glow);
+  transform: translateY(-3px);
+}
+
+/* ── Language Switcher ── */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  padding: 3px 5px;
+  gap: 2px;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  color: rgba(240, 237, 232, 0.6);
+  padding: 4px 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+.lang-btn:hover {
+  color: var(--white);
+}
+.lang-btn.active {
+  background: var(--blue);
+  color: var(--black);
+  box-shadow: 0 0 10px var(--blue-glow);
+}
+.lang-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.65rem;
+  user-select: none;
 }
 
 /* ── Vector Icons Pack ── */
@@ -160,7 +204,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .btn .js-icon {
   width: 1.2em;
   height: 1.2em;
-  vertical-align: -0.18em;
+  vertical-align: middle;
 }
 .js-icon-lg {
   width: 1.6rem;

@@ -24,6 +24,9 @@
   <!-- Vector Icons Pack -->
   <script src="assets/js/icons.js"></script>
 
+  <!-- Bilingual i18n System -->
+  <script src="assets/js/i18n.js" defer></script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23050505'/><circle cx='50' cy='50' r='42' stroke='%2300aaff' stroke-width='4' fill='none'/><text x='50' y='65' font-family='Arial,sans-serif' font-weight='900' font-size='42' fill='%23c9a032' text-anchor='middle'>JS</text></svg>">
 
@@ -94,13 +97,20 @@
   </a>
 
   <ul class="nav-links" id="nav-links" role="list">
-    <li><a href="#about-cinema">Nosotros</a></li>
-    <li><a href="#services-cinema">Servicios</a></li>
-    <li><a href="#gallery-cinema">Galería</a></li>
-    <li><a href="#estetica-cinema">Estética</a></li>
+    <li><a href="#about-cinema" data-i18n="nav_about">Nosotros</a></li>
+    <li><a href="#services-cinema" data-i18n="nav_services">Servicios</a></li>
+    <li><a href="#gallery-cinema" data-i18n="nav_gallery">Galería</a></li>
+    <li><a href="#estetica-cinema" data-i18n="nav_estetica">Estética</a></li>
+    <li class="nav-lang-item">
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+        <span class="lang-sep">|</span>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </li>
     <li>
       <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
-         target="_blank" rel="noopener" class="nav-cta">
+         target="_blank" rel="noopener" class="nav-cta" data-i18n="nav_cta">
         Reservar Cita
       </a>
     </li>
@@ -127,8 +137,8 @@
 
 
   <div class="hero-content">
-    <p class="hero-eyebrow">Rota, Cádiz · Barbería Premium · Est. 2016</p>
-    <h1 class="hero-title" aria-label="Jhon Suarez Barber">
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Barbería Premium en Rota, Cádiz · Est. 2016</p>
+    <h1 class="hero-title" aria-label="Jhon Suarez Barber — Barbería Premium en Rota, Cádiz">
       <span class="hero-title-line">
         <span class="hero-title-word gold">JHON</span>
       </span>
@@ -139,14 +149,14 @@
         <span class="hero-title-word">BARBER</span>
       </span>
     </h1>
-    <p class="hero-tagline">El arte del corte perfecto &amp; bienestar total</p>
+    <p class="hero-tagline" data-i18n="hero_subtitle">El arte del corte perfecto &amp; bienestar total</p>
     <div class="hero-actions">
       <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
-         target="_blank" rel="noopener" class="btn btn-primary">
+         target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero_btn_book">
         <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Reservar Cita
       </a>
-      <a href="#manifesto" class="btn btn-outline">
+      <a href="#manifesto" class="btn btn-outline" data-i18n="hero_btn_discover">
         <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
         Descubrir
       </a>
@@ -161,12 +171,12 @@
   <div class="manifesto-sticky">
     <div class="manifesto-bg" aria-hidden="true"></div>
     <div class="manifesto-inner">
-      <p class="manifesto-label" aria-hidden="true">Nuestra filosofía</p>
+      <p class="manifesto-label" aria-hidden="true" data-i18n="manifesto_label">Nuestra filosofía</p>
       <h2 id="manifesto-title" class="sr-only">Nuestra filosofía: Precisión, Arte, Poder</h2>
-      <span class="manifesto-word manifesto-word-1" aria-hidden="true">PRECISIÓN</span>
-      <span class="manifesto-word blue manifesto-word-2" aria-hidden="true">ARTE</span>
-      <span class="manifesto-word gold manifesto-word-3" aria-hidden="true">PODER</span>
-      <p class="manifesto-year" aria-hidden="true">Desde 2016 · Calle San Juan Bosco, Rota</p>
+      <span class="manifesto-word manifesto-word-1" aria-hidden="true" data-i18n="manifesto_w1">PRECISIÓN</span>
+      <span class="manifesto-word blue manifesto-word-2" aria-hidden="true" data-i18n="manifesto_w2">ARTE</span>
+      <span class="manifesto-word gold manifesto-word-3" aria-hidden="true" data-i18n="manifesto_w3">PODER</span>
+      <p class="manifesto-year" aria-hidden="true" data-i18n="manifesto_year">Desde 2016 · Calle San Juan Bosco, Rota</p>
     </div>
   </div>
 </section>
@@ -184,33 +194,33 @@
              loading="lazy" width="640" height="800">
         <div class="about-cinema-badge" aria-hidden="true">
           <span>+8</span>
-          <small>AÑOS</small>
+          <small data-i18n="about_badge_years">AÑOS</small>
         </div>
       </div>
 
       <div class="about-cinema-text">
-        <span class="section-label">Quiénes somos</span>
-        <h2 class="cinema-h2" id="about-title">
+        <span class="section-label" data-i18n="cinema_about_label">Quiénes somos</span>
+        <h2 class="cinema-h2" id="about-title" data-i18n-html="cinema_about_h2_html">
           Donde la<br><span style="color:var(--blue)">precisión</span><br>es un arte
         </h2>
         <div class="divider" aria-hidden="true"></div>
-        <p>
+        <p data-i18n-html="cinema_about_p1">
           En <strong>Jhon Suarez Barber Shop</strong> creemos que un buen corte
           es mucho más que pelo. Es confianza, es identidad, es la primera impresión
           que el mundo tiene de ti. Por eso nos tomamos cada servicio con dedicación absoluta.
         </p>
-        <p>
+        <p data-i18n-html="cinema_about_p2">
           Ubicados en <strong>Calle San Juan Bosco, 5, Rota (Cádiz)</strong>, ofrecemos
           una experiencia premium en un espacio diseñado con luces hexagonales únicas,
           sillas de barbero clásicas y la ambiance exclusiva del azul eléctrico que nos define.
         </p>
         <div class="about-features-cinema">
-          <div class="about-feature-cinema">Fades de precisión milimétrica</div>
-          <div class="about-feature-cinema">Diseños personalizados únicos</div>
-          <div class="about-feature-cinema">Barbería + Estética bajo un techo</div>
-          <div class="about-feature-cinema">Reserva online 24/7 vía Booksy</div>
-          <div class="about-feature-cinema">Productos premium exclusivos</div>
-          <div class="about-feature-cinema">Más de 5 000 clientes satisfechos</div>
+          <div class="about-feature-cinema" data-i18n="cinema_feat_1">Fades de precisión milimétrica</div>
+          <div class="about-feature-cinema" data-i18n="cinema_feat_2">Diseños personalizados únicos</div>
+          <div class="about-feature-cinema" data-i18n="cinema_feat_3">Barbería + Estética bajo un techo</div>
+          <div class="about-feature-cinema" data-i18n="cinema_feat_4">Reserva online 24/7 vía Booksy</div>
+          <div class="about-feature-cinema" data-i18n="cinema_feat_5">Productos premium exclusivos</div>
+          <div class="about-feature-cinema" data-i18n="cinema_feat_6">Más de 5 000 clientes satisfechos</div>
         </div>
       </div>
 
@@ -225,10 +235,10 @@
   <div class="services-sticky">
 
     <div class="services-header-bar">
-      <h2 id="services-title">
+      <h2 id="services-title" data-i18n-html="cinema_services_title_html">
         Nuestros<br><span style="color:var(--blue)">Servicios</span>
       </h2>
-      <p class="services-drag-hint" aria-label="Desliza horizontalmente para ver los servicios">
+      <p class="services-drag-hint" data-i18n="cinema_services_hint" aria-label="Desliza horizontalmente para ver los servicios">
         Desliza para explorar
       </p>
     </div>
@@ -244,9 +254,9 @@
                aria-hidden="true"></div>
           <div class="service-cinema-card-overlay" aria-hidden="true"></div>
           <div class="service-cinema-card-content">
-            <p class="service-cinema-cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="5" width="10" height="14" rx="2"/><path d="M9 2h6M9 22h6"/><path d="M7 8l10 5M7 13l7 4M10 5l7 4"/></svg> Barbería clásica</p>
+            <p class="service-cinema-cat" data-i18n="cinema_card_1_cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="5" width="10" height="14" rx="2"/><path d="M9 2h6M9 22h6"/><path d="M7 8l10 5M7 13l7 4M10 5l7 4"/></svg> Barbería clásica</p>
             <h3 class="service-cinema-name">MID FADE</h3>
-            <p class="service-cinema-desc">
+            <p class="service-cinema-desc" data-i18n="cinema_card_1_desc">
               El fade medio perfecto — degradado suave de la nuca a los laterales con acabado
               impecable. La firma de Jhon Suarez.
             </p>
@@ -254,7 +264,7 @@
               <span class="service-cinema-price">17€+</span>
               <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
                  target="_blank" rel="noopener" class="service-cinema-book"
-                 tabindex="-1" aria-label="Reservar Mid Fade en Booksy">
+                 tabindex="-1" aria-label="Reservar Mid Fade en Booksy" data-i18n="book_now">
                 Reservar
               </a>
             </div>
@@ -269,9 +279,9 @@
                aria-hidden="true"></div>
           <div class="service-cinema-card-overlay" aria-hidden="true"></div>
           <div class="service-cinema-card-content">
-            <p class="service-cinema-cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg> Barbería artística</p>
+            <p class="service-cinema-cat" data-i18n="cinema_card_2_cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg> Barbería artística</p>
             <h3 class="service-cinema-name">TAPER FADE</h3>
-            <p class="service-cinema-desc">
+            <p class="service-cinema-desc" data-i18n="cinema_card_2_desc">
               Transición gradual ultraprecisa desde los laterales, con textura y forma que
               resalta tu estilo personal.
             </p>
@@ -279,7 +289,7 @@
               <span class="service-cinema-price">17€+</span>
               <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
                  target="_blank" rel="noopener" class="service-cinema-book"
-                 tabindex="-1" aria-label="Reservar Taper Fade en Booksy">
+                 tabindex="-1" aria-label="Reservar Taper Fade en Booksy" data-i18n="book_now">
                 Reservar
               </a>
             </div>
@@ -294,9 +304,9 @@
                aria-hidden="true"></div>
           <div class="service-cinema-card-overlay" aria-hidden="true"></div>
           <div class="service-cinema-card-content">
-            <p class="service-cinema-cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18l7-7"/><path d="M11 11l9-3-2-2-9 3"/><path d="M3 21l3-3"/><circle cx="11" cy="11" r="1.5" fill="currentColor"/><path d="M14 6l4-2"/></svg> Alto contraste</p>
+            <p class="service-cinema-cat" data-i18n="cinema_card_3_cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18l7-7"/><path d="M11 11l9-3-2-2-9 3"/><path d="M3 21l3-3"/><circle cx="11" cy="11" r="1.5" fill="currentColor"/><path d="M14 6l4-2"/></svg> Alto contraste</p>
             <h3 class="service-cinema-name">SKIN FADE</h3>
-            <p class="service-cinema-desc">
+            <p class="service-cinema-desc" data-i18n="cinema_card_3_desc">
               El degradado más radical — hasta piel limpia. Para los que buscan máximo
               impacto y un look urbano sin concesiones.
             </p>
@@ -304,7 +314,7 @@
               <span class="service-cinema-price">19€+</span>
               <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
                  target="_blank" rel="noopener" class="service-cinema-book"
-                 tabindex="-1" aria-label="Reservar Skin Fade en Booksy">
+                 tabindex="-1" aria-label="Reservar Skin Fade en Booksy" data-i18n="book_now">
                 Reservar
               </a>
             </div>
@@ -319,9 +329,9 @@
                aria-hidden="true"></div>
           <div class="service-cinema-card-overlay" aria-hidden="true"></div>
           <div class="service-cinema-card-content">
-            <p class="service-cinema-cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M6 21v-4a6 6 0 0112 0v4"/><path d="M10 11l-2 3M14 11l2 3"/></svg> Para los más pequeños</p>
-            <h3 class="service-cinema-name">CORTE INFANTIL</h3>
-            <p class="service-cinema-desc">
+            <p class="service-cinema-cat" data-i18n="cinema_card_4_cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M6 21v-4a6 6 0 0112 0v4"/><path d="M10 11l-2 3M14 11l2 3"/></svg> Para los más pequeños</p>
+            <h3 class="service-cinema-name" data-i18n="cinema_card_4_name">CORTE INFANTIL</h3>
+            <p class="service-cinema-desc" data-i18n="cinema_card_4_desc">
               De 2 a 12 años. Un ambiente tranquilo y divertido para que el primer corte
               sea una experiencia especial. Incluye detalle sorpresa.
             </p>
@@ -329,7 +339,7 @@
               <span class="service-cinema-price">13€+</span>
               <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
                  target="_blank" rel="noopener" class="service-cinema-book"
-                 tabindex="-1" aria-label="Reservar Corte Infantil en Booksy">
+                 tabindex="-1" aria-label="Reservar Corte Infantil en Booksy" data-i18n="book_now">
                 Reservar
               </a>
             </div>
@@ -344,9 +354,9 @@
                aria-hidden="true"></div>
           <div class="service-cinema-card-overlay" aria-hidden="true"></div>
           <div class="service-cinema-card-content">
-            <p class="service-cinema-cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="6" r="3"/><path d="M2 19v-2a5 5 0 0110 0v2"/><circle cx="17" cy="9" r="2.5"/><path d="M13 19v-1a4 4 0 017 0v1"/></svg> Experiencia familiar</p>
-            <h3 class="service-cinema-name">PACK PADRE &amp; HIJO</h3>
-            <p class="service-cinema-desc">
+            <p class="service-cinema-cat" data-i18n="cinema_card_5_cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="6" r="3"/><path d="M2 19v-2a5 5 0 0110 0v2"/><circle cx="17" cy="9" r="2.5"/><path d="M13 19v-1a4 4 0 017 0v1"/></svg> Experiencia familiar</p>
+            <h3 class="service-cinema-name" data-i18n="cinema_card_5_name">PACK PADRE &amp; HIJO</h3>
+            <p class="service-cinema-desc" data-i18n="cinema_card_5_desc">
               El mejor plan del fin de semana — corte para papá + corte para el pequeño,
               con regalo sorpresa incluido para los niños.
             </p>
@@ -354,7 +364,7 @@
               <span class="service-cinema-price">28€+</span>
               <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
                  target="_blank" rel="noopener" class="service-cinema-book"
-                 tabindex="-1" aria-label="Reservar Pack Padre e Hijo en Booksy">
+                 tabindex="-1" aria-label="Reservar Pack Padre e Hijo en Booksy" data-i18n="book_now">
                 Reservar
               </a>
             </div>
@@ -369,9 +379,9 @@
                aria-hidden="true"></div>
           <div class="service-cinema-card-overlay" aria-hidden="true"></div>
           <div class="service-cinema-card-content">
-            <p class="service-cinema-cat" style="color:#b39ddb"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13c3.5-5 14.5-5 18 0"/><line x1="5.5" y1="11.5" x2="3.5" y2="8.5"/><line x1="8.5" y1="9.5" x2="7.5" y2="6"/><line x1="12" y1="8.8" x2="12" y2="5"/><line x1="15.5" y1="9.5" x2="16.5" y2="6"/><line x1="18.5" y1="11.5" x2="20.5" y2="8.5"/></svg> Alejandra Studio</p>
-            <h3 class="service-cinema-name">LIFTING PESTAÑAS</h3>
-            <p class="service-cinema-desc">
+            <p class="service-cinema-cat" style="color:#b39ddb" data-i18n="cinema_card_6_cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13c3.5-5 14.5-5 18 0"/><line x1="5.5" y1="11.5" x2="3.5" y2="8.5"/><line x1="8.5" y1="9.5" x2="7.5" y2="6"/><line x1="12" y1="8.8" x2="12" y2="5"/><line x1="15.5" y1="9.5" x2="16.5" y2="6"/><line x1="18.5" y1="11.5" x2="20.5" y2="8.5"/></svg> Alejandra Studio</p>
+            <h3 class="service-cinema-name" data-i18n="cinema_card_6_name">LIFTING PESTAÑAS</h3>
+            <p class="service-cinema-desc" data-i18n="cinema_card_6_desc">
               Curvado y tinte natural que estiliza la mirada sin necesidad de máscara.
               Duración de 6-8 semanas. Resultado natural y luminoso.
             </p>
@@ -380,7 +390,7 @@
               <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
                  target="_blank" rel="noopener" class="service-cinema-book"
                  style="color:#b39ddb;border-color:rgba(179,157,219,0.4)"
-                 tabindex="-1" aria-label="Reservar Lifting de Pestañas en Booksy">
+                 tabindex="-1" aria-label="Reservar Lifting de Pestañas en Booksy" data-i18n="book_now">
                 Reservar
               </a>
             </div>
@@ -395,9 +405,9 @@
                aria-hidden="true"></div>
           <div class="service-cinema-card-overlay" aria-hidden="true"></div>
           <div class="service-cinema-card-content">
-            <p class="service-cinema-cat" style="color:var(--gold)"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4c-2 4-2 9 0 14 2-5 2-10 0-14z"/><path d="M12 18c-4-1-8-5-8-10 4 0 7 4 8 10z"/><path d="M12 18c4-1 8-5 8-10-4 0-7 4-8 10z"/><path d="M3 19c4 1 14 1 18 0"/></svg> Servicio premium</p>
-            <h3 class="service-cinema-name">RELAX BARBER</h3>
-            <p class="service-cinema-desc">
+            <p class="service-cinema-cat" style="color:var(--gold)" data-i18n="cinema_card_7_cat"><svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4c-2 4-2 9 0 14 2-5 2-10 0-14z"/><path d="M12 18c-4-1-8-5-8-10 4 0 7 4 8 10z"/><path d="M12 18c4-1 8-5 8-10-4 0-7 4-8 10z"/><path d="M3 19c4 1 14 1 18 0"/></svg> Servicio premium</p>
+            <h3 class="service-cinema-name" data-i18n="cinema_card_7_name">RELAX BARBER</h3>
+            <p class="service-cinema-desc" data-i18n="cinema_card_7_desc">
               La experiencia completa — corte + arreglo de barba + masaje de espalda 20 min.
               Sales completamente renovado.
             </p>
@@ -406,7 +416,7 @@
               <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
                  target="_blank" rel="noopener" class="service-cinema-book"
                  style="color:var(--gold);border-color:rgba(201,160,50,0.4)"
-                 tabindex="-1" aria-label="Reservar Experiencia Relax Barber en Booksy">
+                 tabindex="-1" aria-label="Reservar Experiencia Relax Barber en Booksy" data-i18n="book_now">
                 Reservar
               </a>
             </div>
@@ -427,8 +437,8 @@
 <section id="gallery-cinema" aria-labelledby="gallery-title">
   <div class="container">
     <div class="gallery-cinema-header">
-      <p class="section-label">Nuestro trabajo</p>
-      <h2 id="gallery-title">
+      <p class="section-label" data-i18n="cinema_gallery_label">Nuestro trabajo</p>
+      <h2 id="gallery-title" data-i18n-html="cinema_gallery_title_html">
         La <span style="color:var(--gold)">Galería</span>
       </h2>
     </div>
@@ -548,29 +558,30 @@
     <div class="estetica-grid">
 
       <div class="estetica-text">
-        <span class="section-label" style="color:var(--purple)">Belleza &amp; bienestar</span>
+        <span class="section-label" style="color:var(--purple)" data-i18n="cinema_estetica_label">Belleza &amp; bienestar</span>
         <h2 id="estetica-title">
           <span style="color:var(--purple)">Alejandra</span><br>Studio
         </h2>
-        <p>
+        <p data-i18n-html="cinema_estetica_p1">
           Dentro del mismo espacio, <strong>Alejandra Studio</strong> es tu santuario
           de belleza y bienestar. Tratamientos faciales, pestañas perfectas, masajes
           relajantes y depilación profesional — todo en un ambiente cálido y exclusivo.
         </p>
-        <p>
+        <p data-i18n="cinema_estetica_p2">
           Porque la belleza no tiene género ni límites — aquí todos encontráis
           lo que buscáis para sentiros extraordinarios.
         </p>
         <div class="estetica-tags">
-          <span class="estetica-tag">Pestañas</span>
+          <span class="estetica-tag" data-i18n="estetica_tag_lashes">Pestañas</span>
           <span class="estetica-tag">Dermapen</span>
-          <span class="estetica-tag">Masajes</span>
-          <span class="estetica-tag">Depilación</span>
+          <span class="estetica-tag" data-i18n="estetica_tag_massage">Masajes</span>
+          <span class="estetica-tag" data-i18n="estetica_tag_wax">Depilación</span>
           <span class="estetica-tag">Facial</span>
         </div>
         <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
            target="_blank" rel="noopener" class="btn"
-           style="background:linear-gradient(135deg,var(--purple),#6c3483);color:#fff;box-shadow:0 0 30px rgba(155,89,182,0.4)">
+           style="background:linear-gradient(135deg,var(--purple),#6c3483);color:#fff;box-shadow:0 0 30px rgba(155,89,182,0.4)"
+           data-i18n="cinema_estetica_btn">
           <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Reservar en Alejandra Studio
         </a>
@@ -608,20 +619,20 @@
   <div class="booking-glow" aria-hidden="true"></div>
 
   <div class="booking-content">
-    <h2 id="booking-title">
+    <h2 id="booking-title" data-i18n-html="cinema_booking_title_html">
       <span class="tl">TU</span><br>
       <span class="tl line-blue">MOMENTO</span><br>
       <span class="tl line-gold">HOY</span>
     </h2>
-    <p class="booking-sub">Reserva en segundos. Cancela cuando quieras.</p>
+    <p class="booking-sub" data-i18n="cinema_booking_sub">Reserva en segundos. Cancela cuando quieras.</p>
     <div class="booking-actions">
       <a href="https://booksy.com/es-es/140555_jhon-suarez-barber-shop_barberia_26736_rincones"
          target="_blank" rel="noopener" class="btn btn-primary"
-         aria-label="Reservar cita en Booksy — se abre en nueva pestaña">
+         aria-label="Reservar cita en Booksy — se abre en nueva pestaña" data-i18n="booking_btn">
         <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Reservar en Booksy
       </a>
-      <a href="tel:+34613784171" class="btn btn-outline" aria-label="Llamar a Jhon Suarez Barber Shop">
+      <a href="tel:+34613784171" class="btn btn-outline" aria-label="Llamar a Jhon Suarez Barber Shop" data-i18n="booking_call">
         <svg class="js-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         Llamar
       </a>
@@ -651,8 +662,8 @@
           <div class="js-badge" aria-hidden="true">JS</div>
           <span>JHON SUAREZ</span>
         </a>
-        <p>
-          Barbería premium & estética en Rota, Cádiz.<br>
+        <p data-i18n-html="cinema_footer_desc">
+          Barbería premium &amp; estética en Rota, Cádiz.<br>
           Jhon Suarez Barber Shop + Alejandra Studio.<br>
           Calle San Juan Bosco, 5, Local 2 · 11520 Rota, Cádiz
         </p>
@@ -665,7 +676,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Servicios</h4>
+        <h4 data-i18n="footer_col_services">Servicios</h4>
         <ul>
           <li><a href="#services-cinema">Mid Fade</a></li>
           <li><a href="#services-cinema">Taper Fade</a></li>
@@ -676,7 +687,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Estética</h4>
+        <h4 data-i18n="nav_estetica">Estética</h4>
         <ul>
           <li><a href="#estetica-cinema">Lifting Pestañas</a></li>
           <li><a href="#estetica-cinema">Extensiones</a></li>
@@ -689,11 +700,11 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 Jhon Suarez Barber Shop · Rota, Cádiz</span>
-      <a href="index.html" style="color:var(--blue);text-decoration:none;font-size:0.8rem">
+      <span data-i18n="cinema_footer_copy">© 2026 Jhon Suarez Barber Shop · Rota, Cádiz</span>
+      <a href="index.html" style="color:var(--blue);text-decoration:none;font-size:0.8rem" data-i18n="cinema_footer_standard">
         Versión Estándar →
       </a>
-      <span>Diseñado con pasión en Andalucía</span>
+      <span data-i18n="cinema_footer_origin">Diseñado con pasión en Andalucía</span>
     </div>
   </div>
 </footer>
