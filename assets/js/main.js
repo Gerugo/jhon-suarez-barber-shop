@@ -85,11 +85,14 @@ async function loadServices() {
     return;
   }
 
+  const defaultCategory = 'barberia';
+
   // Build tabs
-  tabsContainer.innerHTML = `<button class="tab-btn active" data-cat="all">Todos</button>` +
+  tabsContainer.innerHTML = `<button class="tab-btn${defaultCategory === 'all' ? ' active' : ''}" data-cat="all">Todos</button>` +
     data.categories.map(c => {
       const iconSvg = window.JSIcons ? window.JSIcons.get(c.icon) : '';
-      return `<button class="tab-btn" data-cat="${c.id}" style="--tab-color:${c.color}">${iconSvg} <span>${c.name}</span></button>`;
+      const isActive = c.id === defaultCategory ? ' active' : '';
+      return `<button class="tab-btn${isActive}" data-cat="${c.id}" style="--tab-color:${c.color}">${iconSvg} <span>${c.name}</span></button>`;
     }).join('');
 
   // Build cards
@@ -137,7 +140,7 @@ async function loadServices() {
     });
   }
 
-  renderCards('all');
+  renderCards(defaultCategory);
 
   // Tab click
   tabsContainer.addEventListener('click', e => {
