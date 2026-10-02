@@ -1,87 +1,95 @@
 /* ============================================================
-   Three.js Particle Canvas — Hero Section
+   Global Ambient Particle Canvas — Jhon Suarez Barber Shop
+   Full-viewport golden & electric blue floating embers
    ============================================================ */
-(function initHeroCanvas() {
-  const canvas = document.getElementById('hero-canvas');
+(function initGlobalParticles() {
+  const canvas = document.getElementById('hero-canvas') || document.querySelector('.global-particles');
   if (!canvas) return;
 
-  let w, h, ctx, particles = [], animId;
-
-  function resize() {
-    w = canvas.width  = canvas.offsetWidth;
-    h = canvas.height = canvas.offsetHeight;
+  // Reduce motion preference check
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    canvas.style.display = 'none';
+    return;
   }
 
-  function createParticle() {
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let w = 0, h = 0, particles = [], animId = null;
+  let isTabActive = true;
+
+  function resize() {
+    w = canvas.width  = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+
+  function createParticle(randomY = true) {
     return {
       x: Math.random() * w,
-      y: Math.random() * h,
-      r: Math.random() * 1.5 + 0.3,
-      dx: (Math.random() - 0.5) * 0.3,
-      dy: -Math.random() * 0.5 - 0.1,
-      alpha: Math.random() * 0.6 + 0.1,
-      hue: Math.random() > 0.7 ? 201 : 45  // blue or gold
+      y: randomY ? Math.random() * h : h + Math.random() * 20,
+      r: Math.random() * 1.6 + 0.4,
+      dx: (Math.random() - 0.5) * 0.35,
+      dy: -(Math.random() * 0.45 + 0.15),
+      alpha: Math.random() * 0.55 + 0.15,
+      hue: Math.random() > 0.65 ? 201 : 45 // 201 = electric blue, 45 = gold
     };
   }
 
-  let isCanvasActive = true;
   function init() {
-    ctx = canvas.getContext('2d');
     resize();
     const isMobile = window.innerWidth < 768;
-    particles = Array.from({ length: isMobile ? 40 : 120 }, createParticle);
-    window.addEventListener('resize', resize, { passive: true });
+    const count = isMobile ? 45 : 95;
+    particles = Array.from({ length: count }, () => createParticle(true));
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          isCanvasActive = entry.isIntersecting;
-          cancelAnimationFrame(animId);
-          if (isCanvasActive) loop();
-        });
-      }, { threshold: 0.05 });
-      observer.observe(canvas);
-    } else {
-      loop();
-    }
+    window.addEventListener('resize', () => {
+      resize();
+    }, { passive: true });
+
+    loop();
   }
 
   function loop() {
-    if (!isCanvasActive) return;
+    if (!isTabActive) return;
+
     ctx.clearRect(0, 0, w, h);
-    particles.forEach((p, i) => {
+
+    const len = particles.length;
+    for (let i = 0; i < len; i++) {
+      const p = particles[i];
       p.x += p.dx;
       p.y += p.dy;
-      p.alpha -= 0.0008;
+      p.alpha -= 0.0006;
 
-      if (p.y < 0 || p.alpha <= 0) {
-        particles[i] = createParticle();
-        particles[i].y = h + 5;
+      if (p.y < -10 || p.alpha <= 0) {
+        particles[i] = createParticle(false);
       }
-      if (p.x < 0) p.x = w;
-      if (p.x > w) p.x = 0;
+      if (p.x < -10) p.x = w + 10;
+      if (p.x > w + 10) p.x = -10;
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${p.hue}, 90%, 70%, ${p.alpha})`;
+      ctx.fillStyle = `hsla(${p.hue}, 90%, 68%, ${p.alpha})`;
       ctx.fill();
-    });
+    }
+
     animId = requestAnimationFrame(loop);
   }
 
-  // Pause when tab not visible
+  // Battery saving: pause when tab is in background
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      isCanvasActive = false;
+      isTabActive = false;
       cancelAnimationFrame(animId);
     } else {
-      isCanvasActive = true;
-      loop();
+      isTabActive = true;
+      cancelAnimationFrame(animId);
+      animId = requestAnimationFrame(loop);
     }
   });
 
-  // Reduce on prefers-reduced-motion
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

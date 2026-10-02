@@ -379,10 +379,15 @@ html.lenis { height: auto; }
   background: linear-gradient(to bottom, rgba(5,5,5,0.25) 0%, rgba(5,5,5,0.55) 50%, rgba(5,5,5,0.9) 100%);
   z-index: 1;
 }
+.global-particles,
 #hero-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 2;
   pointer-events: none;
 }

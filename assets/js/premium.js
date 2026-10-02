@@ -73,75 +73,72 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   const canvas = document.getElementById('hero-canvas');
   if (!canvas || REDUCE_MOTION) return;
 
-  let w, h, ctx, particles = [], animId;
+  let w = 0, h = 0, ctx, particles = [], animId;
+  let isTabActive = true;
 
   function resize() {
-    w = canvas.width  = canvas.offsetWidth;
-    h = canvas.height = canvas.offsetHeight;
+    w = canvas.width  = window.innerWidth;
+    h = canvas.height = window.innerHeight;
   }
 
-  function mkParticle() {
+  function mkParticle(randomY = true) {
     return {
       x: Math.random() * w,
-      y: Math.random() * h,
-      r: Math.random() * 1.4 + 0.2,
-      dx: (Math.random() - 0.5) * 0.25,
-      dy: -(Math.random() * 0.5 + 0.1),
-      alpha: Math.random() * 0.5 + 0.05,
-      hue: Math.random() > 0.75 ? 45 : 201, // gold or blue
+      y: randomY ? Math.random() * h : h + Math.random() * 20,
+      r: Math.random() * 1.5 + 0.3,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: -(Math.random() * 0.45 + 0.12),
+      alpha: Math.random() * 0.5 + 0.1,
+      hue: Math.random() > 0.7 ? 45 : 201, // gold or blue
     };
   }
 
-  const isMobile = window.innerWidth < 768;
-  resize();
-  particles = Array.from({ length: isMobile ? 40 : 100 }, mkParticle);
-  window.addEventListener('resize', resize, { passive: true });
+  function init() {
+    ctx = canvas.getContext('2d');
+    resize();
+    const isMobile = window.innerWidth < 768;
+    particles = Array.from({ length: isMobile ? 40 : 90 }, () => mkParticle(true));
+    window.addEventListener('resize', resize, { passive: true });
+    loop();
+  }
 
-  ctx = canvas.getContext('2d');
-
-  let isCanvasActive = true;
   function loop() {
-    if (!isCanvasActive) return;
+    if (!isTabActive) return;
     ctx.clearRect(0, 0, w, h);
-    particles.forEach((p, i) => {
-      p.x += p.dx; p.y += p.dy; p.alpha -= 0.0007;
-      if (p.y < 0 || p.alpha <= 0) {
-        particles[i] = mkParticle();
-        particles[i].y = h + 5;
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.dx;
+      p.y += p.dy;
+      p.alpha -= 0.0006;
+      if (p.y < -10 || p.alpha <= 0) {
+        particles[i] = mkParticle(false);
       }
-      if (p.x < 0) p.x = w;
-      if (p.x > w) p.x = 0;
+      if (p.x < -10) p.x = w + 10;
+      if (p.x > w + 10) p.x = -10;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `hsla(${p.hue}, 90%, 68%, ${p.alpha})`;
       ctx.fill();
-    });
+    }
     animId = requestAnimationFrame(loop);
-  }
-
-  // Pause when off-screen to free mobile GPU/CPU
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        isCanvasActive = entry.isIntersecting;
-        cancelAnimationFrame(animId);
-        if (isCanvasActive) loop();
-      });
-    }, { threshold: 0.05 });
-    observer.observe(canvas);
-  } else {
-    loop();
   }
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      isCanvasActive = false;
+      isTabActive = false;
       cancelAnimationFrame(animId);
     } else {
-      isCanvasActive = true;
-      loop();
+      isTabActive = true;
+      cancelAnimationFrame(animId);
+      animId = requestAnimationFrame(loop);
     }
   });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 
 // ── HERO REVEAL ──────────────────────────────────────────────
