@@ -451,10 +451,7 @@ html.lenis { height: auto; }
   opacity: 1;
   pointer-events: auto;
 }
-.hero-scroll-hint {
-  display: none;
-}
-/* ── 2026 DIRECTOR HUD & SPATIAL RETICLES ───────────────────── */
+/* ── DIRECTOR TIMELINE & SCENE SWITCHER ─────────────────────── */
 .director-hud {
   position: absolute;
   inset: 0;
@@ -464,299 +461,10 @@ html.lenis { height: auto; }
   color: var(--white);
 }
 
-/* Top Telemetry */
-.hud-top-telemetry {
-  position: absolute;
-  top: 86px;
-  left: 0;
-  right: 0;
-  padding: 0 clamp(16px, 4vw, 48px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: clamp(0.64rem, 1vw, 0.76rem);
-  letter-spacing: 0.18em;
-  color: rgba(240, 237, 232, 0.65);
-  pointer-events: auto;
-}
-.hud-mono {
-  font-family: 'Space Grotesk', monospace, sans-serif;
-  letter-spacing: 0.16em;
-}
-.hud-tele-left {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(5, 5, 5, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 40px;
-  padding: 6px 14px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.hud-rec-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff3344;
-  box-shadow: 0 0 10px #ff3344;
-  animation: hud-rec-blink 1.2s ease-in-out infinite;
-}
-@keyframes hud-rec-blink {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.35; transform: scale(0.85); }
-}
-.hud-rec-label {
-  color: #ff4d5a;
-  font-weight: 700;
-  font-size: 0.66rem;
-}
-.hud-timecode {
-  color: var(--white);
-  font-weight: 600;
-}
-.hud-time-total {
-  color: rgba(240, 237, 232, 0.4);
-}
-.hud-tele-center {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(5, 5, 5, 0.65);
-  border: 1px solid rgba(0, 170, 255, 0.25);
-  border-radius: 40px;
-  padding: 6px 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.hud-scene-num {
-  color: var(--blue);
-  font-weight: 700;
-  font-size: 0.68rem;
-}
-.hud-scene-sep {
-  color: rgba(255, 255, 255, 0.25);
-}
-.hud-scene-name {
-  color: var(--white);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-}
-.hud-tele-right {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.hud-pill {
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  padding: 4px 8px;
-  border-radius: 4px;
-  background: rgba(5, 5, 5, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(240, 237, 232, 0.7);
-  backdrop-filter: blur(8px);
-}
-
-/* Spatial Hotspots Layer */
-.hud-hotspots-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.hud-hotspot {
-  position: absolute;
-  left: var(--hx, 50%);
-  top: var(--hy, 50%);
-  transform: translate(-50%, -50%);
-  pointer-events: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.45s var(--ease-film), transform 0.45s var(--ease-film);
-  will-change: opacity, transform;
-  z-index: 4;
-}
-.hud-hotspot.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Reticle Crosshair */
-.hud-reticle {
-  width: 38px;
-  height: 38px;
-  position: relative;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  outline: none;
-  transition: transform 0.3s ease;
-}
-.hud-reticle:hover {
-  transform: scale(1.18);
-}
-.hud-reticle-ring {
-  position: absolute;
-  inset: 3px;
-  border: 1.5px dashed var(--blue);
-  border-radius: 50%;
-  animation: hud-spin 12s linear infinite;
-  box-shadow: 0 0 12px rgba(0, 170, 255, 0.3);
-}
-@keyframes hud-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-.hud-reticle-cross {
-  position: absolute;
-  inset: 0;
-}
-.hud-reticle-cross::before,
-.hud-reticle-cross::after {
-  content: '';
-  position: absolute;
-  background: rgba(0, 170, 255, 0.7);
-}
-.hud-reticle-cross::before {
-  top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%);
-}
-.hud-reticle-cross::after {
-  left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%);
-}
-.hud-reticle-core {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 10px var(--blue-glow);
-  position: relative;
-  z-index: 2;
-  animation: hud-core-pulse 2s ease-in-out infinite;
-}
-@keyframes hud-core-pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 10px var(--blue-glow); }
-  50%      { transform: scale(1.3); box-shadow: 0 0 18px var(--blue-glow); }
-}
-
-/* Callout Connector & Card */
-.hud-callout {
-  position: absolute;
-  top: -12px;
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-  pointer-events: auto;
-  transition: transform 0.4s var(--ease-film);
-}
-.hud-callout-left {
-  right: 28px;
-  left: auto;
-  flex-direction: row-reverse;
-}
-.hud-callout-right {
-  left: 28px;
-  right: auto;
-  flex-direction: row;
-}
-.hud-connector {
-  width: 60px;
-  height: 30px;
-  flex-shrink: 0;
-}
-.hud-connector svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  stroke: var(--blue);
-  stroke-width: 1.2;
-  fill: none;
-  filter: drop-shadow(0 0 4px var(--blue-glow));
-}
-.hud-card {
-  width: clamp(230px, 20vw, 290px);
-  background: rgba(8, 10, 15, 0.82);
-  border: 1px solid rgba(0, 170, 255, 0.28);
-  border-radius: 10px;
-  padding: 14px 16px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 170, 255, 0.12);
-  text-align: left;
-}
-.hud-card-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-.hud-badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 8px var(--blue-glow);
-}
-.hud-badge-dot.gold {
-  background: var(--gold);
-  box-shadow: 0 0 8px rgba(201, 160, 50, 0.6);
-}
-.hud-badge-dot.purple {
-  background: var(--purple);
-  box-shadow: 0 0 8px rgba(155, 89, 182, 0.6);
-}
-.hud-card-cat {
-  font-family: 'Space Grotesk', monospace, sans-serif;
-  font-size: 0.63rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--blue);
-  font-weight: 600;
-}
-.hud-card-title {
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.15;
-  margin: 0 0 6px;
-}
-.hud-card-desc {
-  font-size: 0.77rem;
-  line-height: 1.45;
-  color: rgba(240, 237, 232, 0.75);
-  margin: 0 0 10px;
-}
-.hud-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--blue);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 170, 255, 0.4);
-  padding-bottom: 2px;
-  transition: all 0.2s ease;
-}
-.hud-card-link:hover {
-  color: var(--gold);
-  border-color: var(--gold);
-  transform: translateX(2px);
-}
-
 /* Bottom Director Timeline */
 .hud-bottom-timeline {
   position: absolute;
-  bottom: 22px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   width: min(94%, 860px);
@@ -764,8 +472,46 @@ html.lenis { height: auto; }
   pointer-events: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
 }
+
+/* Active Scene Indicator */
+.hud-scene-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(5, 5, 5, 0.75);
+  border: 1px solid rgba(0, 170, 255, 0.22);
+  border-radius: 40px;
+  padding: 6px 18px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: clamp(0.68rem, 1vw, 0.78rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 232, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.hud-scene-badge {
+  color: var(--blue);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--blue-glow);
+}
+.hud-scene-sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+.hud-scene-caption {
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* Timeline progress bar */
 .hud-timeline-bar {
   width: 100%;
   height: 4px;
@@ -790,13 +536,16 @@ html.lenis { height: auto; }
   box-shadow: 0 0 12px var(--blue-glow);
   transition: width 0.1s linear;
 }
+
+/* Scene Pills */
 .hud-scene-pills {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 6px;
 }
 .hud-pill-btn {
-  background: rgba(8, 10, 15, 0.75);
+  background: rgba(8, 10, 15, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   padding: 8px 4px;
@@ -843,13 +592,6 @@ html.lenis { height: auto; }
 
 /* ── Mobile and Tablet Adaptations for Galaxy Note 10+ ────── */
 @media (max-width: 900px) {
-  .hud-top-telemetry {
-    top: 72px;
-    padding: 0 16px;
-  }
-  .hud-tele-right {
-    display: none;
-  }
   .hud-scene-pills {
     display: flex;
     overflow-x: auto;
@@ -869,60 +611,15 @@ html.lenis { height: auto; }
 }
 
 @media (max-width: 768px) {
-  .hud-top-telemetry {
-    font-size: 0.62rem;
-  }
-  .hud-tele-center {
-    display: none; /* Keep top bar clean on mobile */
-  }
-  .hud-connector {
-    display: none; /* Hide connector on mobile to avoid layout clipping */
-  }
-  .hud-hotspot {
-    position: static;
-    transform: none;
-  }
-  .hud-reticle {
-    position: absolute;
-    left: var(--hx, 50%);
-    top: var(--hy, 50%);
-    transform: translate(-50%, -50%);
-  }
-  .hud-callout,
-  .hud-callout-left,
-  .hud-callout-right {
-    position: fixed;
-    bottom: 84px;
-    left: 14px;
-    right: 14px;
-    top: auto;
-    width: auto;
-    z-index: 6;
-    flex-direction: row;
-  }
-  .hud-card {
-    width: 100%;
-    padding: 12px 14px;
-    background: rgba(6, 8, 12, 0.94);
-    border-color: rgba(0, 170, 255, 0.35);
-  }
-  .hud-card-title {
-    font-size: 0.94rem;
-  }
-  .hud-card-desc {
-    font-size: 0.74rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 6px;
+  .hud-scene-indicator {
+    font-size: 0.64rem;
+    padding: 5px 14px;
+    gap: 6px;
   }
   .hud-bottom-timeline {
-    bottom: 12px;
-    width: calc(100% - 20px);
-  }
-  .hero-scroll-hint {
-    display: none; /* Avoid overlapping timeline on mobile */
+    bottom: 14px;
+    width: calc(100% - 24px);
+    gap: 8px;
   }
 }
 

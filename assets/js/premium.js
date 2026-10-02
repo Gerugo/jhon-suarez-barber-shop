@@ -165,39 +165,29 @@ function revealHero() {
   });
 }
 
-// ── 2026 DIRECTOR HUD & SPATIAL RETICLES CONTROLLER ─────────
+// ── DIRECTOR TIMELINE CONTROLLER ────────────────────────────
 (function initDirectorHUD() {
   const video = document.getElementById('hero-video');
-  const timecodeEl = document.getElementById('hud-timecode');
-  const sceneTagEl = document.getElementById('hud-scene-tag');
+  const sceneBadgeEl = document.getElementById('hud-scene-badge');
+  const sceneCaptionEl = document.getElementById('hud-scene-caption');
   const timelineBar = document.getElementById('hud-timeline-bar');
   const timelineFill = document.getElementById('hud-timeline-fill');
   const pillBtns = document.querySelectorAll('.hud-pill-btn');
-  const hotspots = document.querySelectorAll('.hud-hotspot');
 
   if (!video) return;
 
-  const SCENE_NAMES = [
-    'ENTRADA NOIR',
-    'HERRAMIENTAS DE AUTOR',
-    'SKIN FADES',
-    'RITUAL BARBA',
-    'ALEJANDRA STUDIO',
-    'SILLÓN JS'
+  const SCENES = [
+    { badge: '01 // ESPACIO', caption: 'Salón Noir & Iluminación Hexagonal' },
+    { badge: '02 // INSTRUMENTOS', caption: 'Herramientas de Autor & Acero Templado' },
+    { badge: '03 // TÉCNICA', caption: 'Degradado Skin Fade Milimétrico' },
+    { badge: '04 // TRADICIÓN', caption: 'Ritual Barba & Toalla Caliente' },
+    { badge: '05 // BIENESTAR', caption: 'Alejandra Studio Estética & Cuidado' },
+    { badge: '06 // CONFORT', caption: 'Sillón de Barbero Vintage JS Signature' }
   ];
 
   let currentActiveScene = -1;
   let rafId = null;
   let isHeroVisible = true;
-
-  function formatTime(sec) {
-    const s = Math.max(0, sec);
-    const m = Math.floor(s / 60);
-    const rem = s % 60;
-    const wholeSec = Math.floor(rem);
-    const tenths = Math.floor((rem - wholeSec) * 10);
-    return `${String(m).padStart(2, '0')}:${String(wholeSec).padStart(2, '0')}.${tenths}`;
-  }
 
   function setActiveScene(idx, seekVideo = false) {
     const safeIdx = Math.max(0, Math.min(5, idx));
@@ -208,12 +198,12 @@ function revealHero() {
       video.currentTime = safeIdx * 5.0;
     }
 
-    // Update scene tag
-    if (sceneTagEl) {
-      const numSpan = sceneTagEl.querySelector('.hud-scene-num');
-      const nameSpan = sceneTagEl.querySelector('.hud-scene-name');
-      if (numSpan) numSpan.textContent = `SCENE 0${safeIdx + 1} / 06`;
-      if (nameSpan) nameSpan.textContent = SCENE_NAMES[safeIdx];
+    // Update scene indicator
+    if (sceneBadgeEl) {
+      sceneBadgeEl.textContent = SCENES[safeIdx].badge;
+    }
+    if (sceneCaptionEl) {
+      sceneCaptionEl.textContent = SCENES[safeIdx].caption;
     }
 
     // Update pills
@@ -225,24 +215,11 @@ function revealHero() {
         btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
     });
-
-    // Update spatial hotspots
-    hotspots.forEach((h, i) => {
-      const isActive = i === safeIdx;
-      h.classList.toggle('active', isActive);
-      const reticle = h.querySelector('.hud-reticle');
-      if (reticle) reticle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-    });
   }
 
   function updateHUD() {
     const t = video.currentTime || 0;
     const dur = 30.0;
-
-    // Timecode
-    if (timecodeEl) {
-      timecodeEl.textContent = formatTime(t);
-    }
 
     // Progress bar
     if (timelineFill) {
@@ -292,18 +269,6 @@ function revealHero() {
       }
     });
   }
-
-  // Handle hotspot reticle clicks / keyboard toggles
-  hotspots.forEach(h => {
-    const reticle = h.querySelector('.hud-reticle');
-    if (reticle) {
-      reticle.addEventListener('click', e => {
-        e.stopPropagation();
-        const scene = parseInt(h.dataset.scene || '0', 10);
-        setActiveScene(scene, true);
-      });
-    }
-  });
 
   // Video event listeners
   video.addEventListener('play', () => {
