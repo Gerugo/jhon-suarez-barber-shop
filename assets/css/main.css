@@ -1563,6 +1563,18 @@ footer {
   border: 1px solid rgba(155, 89, 182, 0.35);
   box-shadow: 0 15px 45px rgba(155, 89, 182, 0.2);
   background: #0d0a12;
+  aspect-ratio: 16/9;
+  max-height: 420px;
+  width: 100%;
+  align-self: center;
+}
+.estetica-video-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(155, 89, 182, 0.4) !important;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
 }
 .estetica-video-card video {
   width: 100%;
@@ -1572,8 +1584,8 @@ footer {
 }
 .estetica-video-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 14px;
+  left: 14px;
   background: rgba(15, 12, 20, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1587,8 +1599,9 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  z-index: 2;
+  z-index: 5;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  pointer-events: none;
 }
 .estetica-live-dot {
   width: 8px;
