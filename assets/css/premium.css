@@ -215,12 +215,16 @@ html.lenis { height: auto; }
   box-shadow: 0 0 20px var(--blue-glow);
   transform: translateY(-2px);
 }
-.btn-instagram {
+.btn-instagram, .btn-tiktok {
   white-space: normal !important;
   max-width: min(100%, 460px);
   text-align: center;
   line-height: 1.4;
-  margin: 0 auto;
+}
+.btn-tiktok:hover {
+  border-color: #00f2fe;
+  color: var(--white);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.25), 0 0 20px rgba(254, 44, 85, 0.25);
 }
 
 /* ── Language Switcher ── */
