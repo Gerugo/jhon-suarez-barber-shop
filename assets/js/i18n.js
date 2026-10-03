@@ -74,7 +74,7 @@ const I18N_TRANSLATIONS = {
     ceballos_desc: 'El compás y el arte del sur fusionados con las tendencias más vanguardistas. Orgullo andaluz en la cúspide del fútbol mundial.',
     elite_quote: '«Tu imagen, en manos de un campeón»',
     elite_quote_sub: 'El mismo nivel de detalle, concentración y maestría que exigen las estrellas mundiales, dedicado a cada cliente en nuestro sillón de Rota.',
-    elite_ig_btn: 'Ver trabajos en @johnsuarezelitecuts',
+    elite_ig_btn: 'Ver trabajos en @johnsuarezbarbershop',
 
     // Services
     services_label: 'Lo que ofrecemos',
@@ -251,7 +251,7 @@ const I18N_TRANSLATIONS = {
     ceballos_desc: 'Southern rhythm and Andalusian artistry blended with modern barber trends. Proud local roots at the pinnacle of European football.',
     elite_quote: '«Your image, in the hands of a champion»',
     elite_quote_sub: 'The exact same standard of precision, focus, and artistry demanded by world champions, dedicated to every client in our chair in Rota.',
-    elite_ig_btn: 'Explore cuts on @johnsuarezelitecuts',
+    elite_ig_btn: 'Explore cuts on @johnsuarezbarbershop',
 
     // Services
     services_label: 'What We Offer',
