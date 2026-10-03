@@ -251,7 +251,7 @@ function initGSAP() {
   });
 
   /* SCENE COUNTER */
-  const scenes = ['hero','manifesto','about-cinema','services-cinema','gallery-cinema','artistry','estetica-cinema','booking'];
+  const scenes = ['hero','manifesto','about-cinema','elite-cinema','services-cinema','gallery-cinema','artistry','estetica-cinema','booking'];
   const counterEl = document.querySelector('#scene-counter .scene-current');
   if (counterEl) {
     scenes.forEach((id, i) => {

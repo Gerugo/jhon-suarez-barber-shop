@@ -8,26 +8,186 @@
       "icon": "scissors",
       "color": "#00aaff",
       "services": [
-        { "name": "Mid Fade", "desc": "Fade Medio. Degradado clásico al nivel medio de la cabeza.", "price": "17€+", "duration": "30min", "icon": "clippers" },
-        { "name": "Taper Fade", "desc": "Degradado suave y gradual. Look limpio y versátil.", "price": "17€+", "duration": "30min", "icon": "scissors" },
-        { "name": "Low Fade", "desc": "Fade Bajo. Degradado en la parte inferior, efecto sutil.", "price": "17€+", "duration": "30min", "icon": "clippers" },
-        { "name": "High Fade", "desc": "Fade Alto. Degradado en la parte superior, look atrevido.", "price": "17€+", "duration": "30min", "icon": "clippers" },
-        { "name": "Skin Fade", "desc": "Fade a la piel. Degradado hasta piel al ras, máxima definición.", "price": "17€+", "duration": "30min", "icon": "razor" },
-        { "name": "Drop Fade", "desc": "Fade Drop. Degradado que cae detrás de la oreja, estilo único.", "price": "17€+", "duration": "30min", "icon": "clippers" },
-        { "name": "Temple Fade", "desc": "Fade en las sienes. Definición extrema en la zona temporal.", "price": "17€+", "duration": "30min", "icon": "razor" },
-        { "name": "Burst Fade", "desc": "Fade en forma de arco alrededor de la oreja. Moderno y llamativo.", "price": "17€+", "duration": "30min", "icon": "scissors" },
-        { "name": "Bald Fade", "desc": "Fade a calavera. El degradado más extremo, hasta piel total.", "price": "17€+", "duration": "30min", "icon": "razor" },
-        { "name": "Afro Fade", "desc": "Fade para cabello rizado. Respeta la textura natural del afro.", "price": "17€+", "duration": "30min", "icon": "comb" },
-        { "name": "Flat Top", "desc": "Superficie plana y recta en lo alto. Estilo clásico militar redefinido.", "price": "17€+", "duration": "30min", "icon": "comb" },
-        { "name": "Corte Francés", "desc": "Parte superior texturizada, flequillo adelantado, laterales degradados.", "price": "17€+", "duration": "30min", "icon": "scissors" },
-        { "name": "Barba Italiana", "desc": "Perfilado y arreglo de barba italiana con acabado profesional.", "price": "15€+", "duration": "30min", "icon": "beard" },
-        { "name": "Barba Completa", "desc": "Full Beard. Arreglo completo de barba con toalla caliente y bálsamo.", "price": "15€+", "duration": "30min", "icon": "beard" },
-        { "name": "Cut & Beard", "desc": "Corte + Barba. Ritual clásico con navaja, toalla caliente y aftershave.", "price": "30€+", "duration": "1h", "icon": "pole" },
-        { "name": "Corte Infantil", "desc": "Para peques de 2 a 12 años. Corte con paciencia y precisión.", "price": "13€+", "duration": "30min", "icon": "child" },
-        { "name": "Pack Padre & Hijo", "desc": "Corte de caballero + corte niño (2-10 años) + asesoramiento + peinado + detalle exclusivo.", "price": "29€+", "duration": "1h", "icon": "family" },
-        { "name": "Total Men's Grooming", "desc": "Corte personalizado + depilación de cejas + depilación de nariz.", "price": "22€+", "duration": "30min", "icon": "sparkle" },
-        { "name": "Clean Cut Experience", "desc": "Corte + limpieza facial + depilación de cejas, nariz y orejas.", "price": "60€+", "duration": "1h 30min", "icon": "sparkle" },
-        { "name": "Experiencia Relax Barber", "desc": "Corte + arreglo de barba con ritual toalla caliente + masaje relajante de espalda.", "price": "60€+", "duration": "1h 30min", "icon": "lotus" }
+        {
+          "name": "Mid Fade",
+          "name_en": "Mid Fade",
+          "desc": "Fade Medio. Degradado clásico al nivel medio de la cabeza.",
+          "desc_en": "Classic mid-level fade with seamless blending and razor-sharp contouring.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "clippers"
+        },
+        {
+          "name": "Taper Fade",
+          "name_en": "Taper Fade",
+          "desc": "Degradado suave y gradual. Look limpio y versátil.",
+          "desc_en": "Gradual, subtle taper around sideburns and neckline. Clean, versatile style.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "scissors"
+        },
+        {
+          "name": "Low Fade",
+          "name_en": "Low Fade",
+          "desc": "Fade Bajo. Degradado en la parte inferior, efecto sutil.",
+          "desc_en": "Low-profile fade starting right above the ears and neck for an understated look.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "clippers"
+        },
+        {
+          "name": "High Fade",
+          "name_en": "High Fade",
+          "desc": "Fade Alto. Degradado en la parte superior, look atrevido.",
+          "desc_en": "High-contrast fade starting high on the head. Bold, clean, and striking.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "clippers"
+        },
+        {
+          "name": "Skin Fade",
+          "name_en": "Skin Fade",
+          "desc": "Fade a la piel. Degradado hasta piel al ras, máxima definición.",
+          "desc_en": "Down-to-the-skin precision fade for ultimate definition and ultra-clean finish.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "razor"
+        },
+        {
+          "name": "Drop Fade",
+          "name_en": "Drop Fade",
+          "desc": "Fade Drop. Degradado que cae detrás de la oreja, estilo único.",
+          "desc_en": "Arc-shaped fade dropping neatly behind the ear for an iconic modern silhouette.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "clippers"
+        },
+        {
+          "name": "Temple Fade",
+          "name_en": "Temple Fade",
+          "desc": "Fade en las sienes. Definición extrema en la zona temporal.",
+          "desc_en": "Sharp, detailed fade centered on temples and sideburns with crisp edging.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "razor"
+        },
+        {
+          "name": "Burst Fade",
+          "name_en": "Burst Fade",
+          "desc": "Fade en forma de arco alrededor de la oreja. Moderno y llamativo.",
+          "desc_en": "Circular burst effect tapering smoothly around the ear. Modern and eye-catching.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "scissors"
+        },
+        {
+          "name": "Bald Fade",
+          "name_en": "Bald Fade",
+          "desc": "Fade a calavera. El degradado más extremo, hasta piel total.",
+          "desc_en": "Zero-level extreme fade completely down to bare skin with electric foil shaver.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "razor"
+        },
+        {
+          "name": "Afro Fade",
+          "name_en": "Afro Fade",
+          "desc": "Fade para cabello rizado. Respeta la textura natural del afro.",
+          "desc_en": "Tailored fade honoring natural curly or afro texture with sharp line-up.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "comb"
+        },
+        {
+          "name": "Flat Top",
+          "name_en": "Flat Top",
+          "desc": "Superficie plana y recta en lo alto. Estilo clásico militar redefinido.",
+          "desc_en": "Precision flat-topped surface. Classic military heritage redefined with modern edge.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "comb"
+        },
+        {
+          "name": "Corte Francés",
+          "name_en": "French Crop",
+          "desc": "Parte superior texturizada, flequillo adelantado, laterales degradados.",
+          "desc_en": "Textured crop top with defined forward fringe and tight faded sides.",
+          "price": "17€+",
+          "duration": "30min",
+          "icon": "scissors"
+        },
+        {
+          "name": "Barba Italiana",
+          "name_en": "Italian Beard Trim",
+          "desc": "Perfilado y arreglo de barba italiana con acabado profesional.",
+          "desc_en": "Precision contouring and sculpt of Italian beard style with luxury oils.",
+          "price": "15€+",
+          "duration": "30min",
+          "icon": "beard"
+        },
+        {
+          "name": "Barba Completa",
+          "name_en": "Full Beard Grooming",
+          "desc": "Full Beard. Arreglo completo de barba con toalla caliente y bálsamo.",
+          "desc_en": "Complete beard reshaping, hot towel ritual, straight razor lining, and balm.",
+          "price": "15€+",
+          "duration": "30min",
+          "icon": "beard"
+        },
+        {
+          "name": "Cut & Beard",
+          "name_en": "Haircut & Beard Combo",
+          "desc": "Corte + Barba. Ritual clásico con navaja, toalla caliente y aftershave.",
+          "desc_en": "Signature haircut and complete beard ritual with straight razor and hot towel.",
+          "price": "30€+",
+          "duration": "1h",
+          "icon": "pole"
+        },
+        {
+          "name": "Corte Infantil",
+          "name_en": "Kids Haircut (2-12 yrs)",
+          "desc": "Para peques de 2 a 12 años. Corte con paciencia y precisión.",
+          "desc_en": "Gentle, patient, and stylish haircut designed for young gentlemen aged 2-12.",
+          "price": "13€+",
+          "duration": "30min",
+          "icon": "child"
+        },
+        {
+          "name": "Pack Padre & Hijo",
+          "name_en": "Father & Son Package",
+          "desc": "Corte de caballero + corte niño (2-10 años) + asesoramiento + peinado + detalle exclusivo.",
+          "desc_en": "Gentleman's haircut + kids cut (2-10 yrs) with custom styling and a special gift.",
+          "price": "29€+",
+          "duration": "1h",
+          "icon": "family"
+        },
+        {
+          "name": "Total Men's Grooming",
+          "name_en": "Total Men's Grooming",
+          "desc": "Corte personalizado + depilación de cejas + depilación de nariz.",
+          "desc_en": "Custom haircut + precision brow grooming + nostril waxing for a sharp total look.",
+          "price": "22€+",
+          "duration": "30min",
+          "icon": "sparkle"
+        },
+        {
+          "name": "Clean Cut Experience",
+          "name_en": "Clean Cut Experience",
+          "desc": "Corte + limpieza facial + depilación de cejas, nariz y orejas.",
+          "desc_en": "Signature cut + deep facial cleanse + brow, nose, and ear grooming.",
+          "price": "60€+",
+          "duration": "1h 30min",
+          "icon": "sparkle"
+        },
+        {
+          "name": "Experiencia Relax Barber",
+          "name_en": "Relax Barber Experience",
+          "desc": "Corte + arreglo de barba con ritual toalla caliente + masaje relajante de espalda.",
+          "desc_en": "Haircut + hot towel beard ritual + soothing upper back massage for total revival.",
+          "price": "60€+",
+          "duration": "1h 30min",
+          "icon": "lotus"
+        }
       ]
     },
     {
@@ -37,15 +197,87 @@
       "icon": "eyelash",
       "color": "#9b59b6",
       "services": [
-        { "name": "Lifting de Pestañas", "desc": "Curvado permanente y lifting profesional para una mirada más abierta.", "price": "35€", "duration": "1h", "icon": "eyelash" },
-        { "name": "Pestañas Volumen Tecnológico", "desc": "Extensiones de volumen con técnica tecnológica avanzada.", "price": "55€", "duration": "1h 30min", "icon": "eyelash" },
-        { "name": "Pestañas Volumen Artesanal", "desc": "Volumen artesanal hecho a mano, resultado ultra natural.", "price": "65€+", "duration": "2h 30min", "icon": "eyelash" },
-        { "name": "Extensión Clásica", "desc": "Extensiones de pestañas clásicas, una a una. Mirada sofisticada.", "price": "40€", "duration": "1h 30min", "icon": "eyelash" },
-        { "name": "Relleno Pestañas Clásicas", "desc": "Relleno para pestañas clásicas (requiere 40-50% base).", "price": "25€", "duration": "1h 15min", "icon": "eyelash" },
-        { "name": "Relleno Tecnológico", "desc": "Relleno de extensiones tecnológicas (requiere 40-50% base).", "price": "Variable", "duration": "1h 30min", "icon": "eyelash" },
-        { "name": "Retiro de Pestañas", "desc": "Retiro seguro de extensiones de otros centros.", "price": "10€", "duration": "20min", "icon": "scissors" },
-        { "name": "Diseño de Cejas + Henna", "desc": "Diseño, depilación y pigmentación con henna natural.", "price": "15€", "duration": "20min", "icon": "sparkle" },
-        { "name": "Laminado de Cejas", "desc": "Laminado profesional para cejas perfectamente definidas.", "price": "25€", "duration": "1h", "icon": "eyelash" }
+        {
+          "name": "Lifting de Pestañas",
+          "name_en": "Lash Lift",
+          "desc": "Curvado permanente y lifting profesional para una mirada más abierta.",
+          "desc_en": "Semi-permanent curling and professional lift for wide-awake, natural eyes.",
+          "price": "35€",
+          "duration": "1h",
+          "icon": "eyelash"
+        },
+        {
+          "name": "Pestañas Volumen Tecnológico",
+          "name_en": "Technological Volume Lashes",
+          "desc": "Extensiones de volumen con técnica tecnológica avanzada.",
+          "desc_en": "Advanced volume extensions using cutting-edge multi-fiber technology.",
+          "price": "55€",
+          "duration": "1h 30min",
+          "icon": "eyelash"
+        },
+        {
+          "name": "Pestañas Volumen Artesanal",
+          "name_en": "Handmade Russian Volume Lashes",
+          "desc": "Volumen artesanal hecho a mano, resultado ultra natural.",
+          "desc_en": "Artisanal hand-crafted volume fans for an ultra-light, glamorous look.",
+          "price": "65€+",
+          "duration": "2h 30min",
+          "icon": "eyelash"
+        },
+        {
+          "name": "Extensión Clásica",
+          "name_en": "Classic Lash Extensions",
+          "desc": "Extensiones de pestañas clásicas, una a una. Mirada sofisticada.",
+          "desc_en": "One-by-one classic eyelash extensions for an elegant, natural enhancement.",
+          "price": "40€",
+          "duration": "1h 30min",
+          "icon": "eyelash"
+        },
+        {
+          "name": "Relleno Pestañas Clásicas",
+          "name_en": "Classic Lash Refill",
+          "desc": "Relleno para pestañas clásicas (requiere 40-50% base).",
+          "desc_en": "Refill maintenance for classic lashes (requires 40-50% remaining base).",
+          "price": "25€",
+          "duration": "1h 15min",
+          "icon": "eyelash"
+        },
+        {
+          "name": "Relleno Tecnológico",
+          "name_en": "Technological Lash Refill",
+          "desc": "Relleno de extensiones tecnológicas (requiere 40-50% base).",
+          "desc_en": "Refill maintenance for tech volume extensions (requires 40-50% remaining base).",
+          "price": "Variable",
+          "duration": "1h 30min",
+          "icon": "eyelash"
+        },
+        {
+          "name": "Retiro de Pestañas",
+          "name_en": "Lash Removal",
+          "desc": "Retiro seguro de extensiones de otros centros.",
+          "desc_en": "Gentle and safe removal of eyelash extensions from any studio.",
+          "price": "10€",
+          "duration": "20min",
+          "icon": "scissors"
+        },
+        {
+          "name": "Diseño de Cejas + Henna",
+          "name_en": "Brow Architecture + Henna",
+          "desc": "Diseño, depilación y pigmentación con henna natural.",
+          "desc_en": "Custom brow shaping, hair removal, and tinting with natural henna.",
+          "price": "15€",
+          "duration": "20min",
+          "icon": "sparkle"
+        },
+        {
+          "name": "Laminado de Cejas",
+          "name_en": "Brow Lamination",
+          "desc": "Laminado profesional para cejas perfectamente definidas.",
+          "desc_en": "Professional brow lamination for fuller, perfectly styled and set arches.",
+          "price": "25€",
+          "duration": "1h",
+          "icon": "eyelash"
+        }
       ]
     },
     {
@@ -55,13 +287,69 @@
       "icon": "waxing",
       "color": "#e91e8c",
       "services": [
-        { "name": "Depilación Cejas", "desc": "Depilación y perfilado de cejas con cera.", "price": "7€", "duration": "20min", "icon": "eyelash" },
-        { "name": "Depilación Nasal", "desc": "Eliminación de vello visible en nariz.", "price": "4€", "duration": "10min", "icon": "waxing" },
-        { "name": "Depilación Bigote", "desc": "Eliminación suave del vello de bigote.", "price": "3€", "duration": "15min", "icon": "waxing" },
-        { "name": "Depilación Axilas", "desc": "Depilación completa de axilas con cera.", "price": "8€", "duration": "15min", "icon": "waxing" },
-        { "name": "Depilación Media Pierna", "desc": "Media pierna, piel suave y libre de vello.", "price": "10€", "duration": "30min", "icon": "waxing" },
-        { "name": "Depilación Pierna Completa", "desc": "Pierna completa, resultados duraderos.", "price": "18€", "duration": "45min", "icon": "waxing" },
-        { "name": "Depilación Bikini", "desc": "Depilación de zona bikini con máximo cuidado.", "price": "20€", "duration": "45min", "icon": "waxing" }
+        {
+          "name": "Depilación Cejas",
+          "name_en": "Eyebrow Waxing",
+          "desc": "Depilación y perfilado de cejas con cera.",
+          "desc_en": "Precise brow shaping and waxing with skin-friendly soothing wax.",
+          "price": "7€",
+          "duration": "20min",
+          "icon": "eyelash"
+        },
+        {
+          "name": "Depilación Nasal",
+          "name_en": "Nose Waxing",
+          "desc": "Eliminación de vello visible en nariz.",
+          "desc_en": "Quick and painless removal of visible nostril hair.",
+          "price": "4€",
+          "duration": "10min",
+          "icon": "waxing"
+        },
+        {
+          "name": "Depilación Bigote",
+          "name_en": "Upper Lip Waxing",
+          "desc": "Eliminación suave del vello de bigote.",
+          "desc_en": "Gentle and smooth hair removal for the upper lip area.",
+          "price": "3€",
+          "duration": "15min",
+          "icon": "waxing"
+        },
+        {
+          "name": "Depilación Axilas",
+          "name_en": "Underarm Waxing",
+          "desc": "Depilación completa de axilas con cera.",
+          "desc_en": "Complete underarm hair removal for smooth, long-lasting results.",
+          "price": "8€",
+          "duration": "15min",
+          "icon": "waxing"
+        },
+        {
+          "name": "Depilación Media Pierna",
+          "name_en": "Half Leg Waxing",
+          "desc": "Media pierna, piel suave y libre de vello.",
+          "desc_en": "Smooth hair removal from knee down, leaving skin soft and silky.",
+          "price": "10€",
+          "duration": "30min",
+          "icon": "waxing"
+        },
+        {
+          "name": "Depilación Pierna Completa",
+          "name_en": "Full Leg Waxing",
+          "desc": "Pierna completa, resultados duraderos.",
+          "desc_en": "Complete leg hair removal with moisturizing post-wax care.",
+          "price": "18€",
+          "duration": "45min",
+          "icon": "waxing"
+        },
+        {
+          "name": "Depilación Bikini",
+          "name_en": "Bikini Line Waxing",
+          "desc": "Depilación de zona bikini con máximo cuidado.",
+          "desc_en": "Careful and delicate bikini line hair removal.",
+          "price": "20€",
+          "duration": "45min",
+          "icon": "waxing"
+        }
       ]
     },
     {
@@ -71,8 +359,24 @@
       "icon": "lotus",
       "color": "#2ecc71",
       "services": [
-        { "name": "Masaje Relajante de Espalda", "desc": "Movimientos suaves que liberan tensión dorsal y revitalizan cuerpo y mente.", "price": "25€", "duration": "35min", "icon": "lotus" },
-        { "name": "Maderoterapia", "desc": "Masaje corporal con herramientas de madera. Activa circulación y mejora la piel.", "price": "40€", "duration": "1h", "icon": "lotus" }
+        {
+          "name": "Masaje Relajante de Espalda",
+          "name_en": "Relaxing Back Massage",
+          "desc": "Movimientos suaves que liberan tensión dorsal y revitalizan cuerpo y mente.",
+          "desc_en": "Gentle therapeutic strokes relieving upper back tension, restoring mind and body.",
+          "price": "25€",
+          "duration": "35min",
+          "icon": "lotus"
+        },
+        {
+          "name": "Maderoterapia",
+          "name_en": "Wood Therapy (Maderoterapia)",
+          "desc": "Masaje corporal con herramientas de madera. Activa circulación y mejora la piel.",
+          "desc_en": "Body contouring massage using anatomical wooden tools to boost circulation and firm skin.",
+          "price": "40€",
+          "duration": "1h",
+          "icon": "lotus"
+        }
       ]
     },
     {
@@ -82,9 +386,33 @@
       "icon": "diamond",
       "color": "#f39c12",
       "services": [
-        { "name": "Limpieza Facial Básica", "desc": "Limpieza profunda, exfoliación, extracción, mascarilla e hidratación. Piel luminosa.", "price": "35€+", "duration": "1h", "icon": "sparkle" },
-        { "name": "Limpieza Facial + Dermapen", "desc": "Limpieza avanzada con microneedling. Estimula colágeno, mejora textura y atenuación de marcas.", "price": "70€+", "duration": "1h 30min", "icon": "diamond" },
-        { "name": "Bono Dermapen x3", "desc": "3 sesiones de limpieza con Dermapen. Ahorra 50€. El tratamiento más completo.", "price": "160€", "duration": "1h 15min", "icon": "diamond" }
+        {
+          "name": "Limpieza Facial Básica",
+          "name_en": "Deep Cleansing Facial",
+          "desc": "Limpieza profunda, exfoliación, extracción, mascarilla e hidratación. Piel luminosa.",
+          "desc_en": "Deep pore cleanse, exfoliation, extraction, soothing mask, and hydration.",
+          "price": "35€+",
+          "duration": "1h",
+          "icon": "sparkle"
+        },
+        {
+          "name": "Limpieza Facial + Dermapen",
+          "name_en": "Dermapen Microneedling Facial",
+          "desc": "Limpieza avanzada con microneedling. Estimula colágeno, mejora textura y atenuación de marcas.",
+          "desc_en": "Advanced microneedling treatment stimulating collagen and smoothing texture.",
+          "price": "70€+",
+          "duration": "1h 30min",
+          "icon": "diamond"
+        },
+        {
+          "name": "Bono Dermapen x3",
+          "name_en": "Dermapen Package (3 Sessions)",
+          "desc": "3 sesiones de limpieza con Dermapen. Ahorra 50€. El tratamiento más completo.",
+          "desc_en": "Comprehensive 3-session Dermapen renewal program. Save 50€.",
+          "price": "160€",
+          "duration": "1h 15min",
+          "icon": "diamond"
+        }
       ]
     }
   ]
