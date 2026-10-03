@@ -516,6 +516,32 @@ document.querySelectorAll('.g-item').forEach((el, i) => {
   el.addEventListener('click', () => openLightbox(i));
   el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(i); });
 });
+
+// Alejandra Studio photos lightbox integration
+document.querySelectorAll('.estetica-photo').forEach(photo => {
+  const img = photo.querySelector('img');
+  if (!img) return;
+  photo.setAttribute('role', 'button');
+  photo.setAttribute('tabindex', '0');
+  photo.style.cursor = 'pointer';
+  photo.addEventListener('click', () => {
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || 'Alejandra Studio';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lenis?.stop();
+  });
+  photo.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || 'Alejandra Studio';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lenis?.stop();
+    }
+  });
+});
 lbClose?.addEventListener('click', closeLightbox);
 lbPrev?.addEventListener('click', () => showAt(currentIndex - 1));
 lbNext?.addEventListener('click', () => showAt(currentIndex + 1));

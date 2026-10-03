@@ -103,9 +103,18 @@ const I18N_TRANSLATIONS = {
     // Estetica Studio
     estetica_title_html: 'Tu espacio de<br><span style="color:var(--purple)">relajación</span><br>y belleza',
     estetica_desc_html: '<strong>Alejandra Studio</strong> es tu santuario de belleza y bienestar dentro de JS Barber Shop. Extensiones de pestañas premium, tratamientos faciales con Dermapen, masajes relajantes y depilación profesional — todo en un ambiente cálido y exclusivo.',
+    estetica_badge_video: 'SALA ORIGINAL · EN VIVO',
     estetica_tag_lashes: 'Pestañas',
     estetica_tag_massage: 'Masajes',
     estetica_tag_wax: 'Depilación',
+    estetica_photo_room: 'Sala Principal',
+    estetica_photo_spa: 'Rincón Spa',
+    estetica_photo_lamp: 'Lámpara Moon',
+    estetica_photo_camilla: 'Camilla & Confort',
+    estetica_photo_menu: 'Carta de Servicios',
+    estetica_photo_lash1: 'Pestañas Volumen',
+    estetica_photo_lash2: 'Lifting de Pestañas',
+    estetica_photo_lash3: 'Diseño de Mirada',
 
     // Booking CTA
     booking_title: '¿Listo para tu mejor corte?',
@@ -271,9 +280,18 @@ const I18N_TRANSLATIONS = {
     // Estetica Studio
     estetica_title_html: 'Your sanctuary for<br><span style="color:var(--purple)">relaxation</span><br>&amp; beauty',
     estetica_desc_html: '<strong>Alejandra Studio</strong> is your beauty and wellness haven inside JS Barber Shop. Premium lash extensions, Dermapen facials, relaxing massage therapy, and professional waxing — in a warm, private atmosphere.',
+    estetica_badge_video: 'ORIGINAL STUDIO · IN MOTION',
     estetica_tag_lashes: 'Lashes',
     estetica_tag_massage: 'Massage',
     estetica_tag_wax: 'Waxing',
+    estetica_photo_room: 'Main Studio',
+    estetica_photo_spa: 'Spa Rituals',
+    estetica_photo_lamp: 'Moon Lamp',
+    estetica_photo_camilla: 'Treatment Bed',
+    estetica_photo_menu: 'Services Menu',
+    estetica_photo_lash1: 'Volume Lashes',
+    estetica_photo_lash2: 'Lash Lift',
+    estetica_photo_lash3: 'Brow Shaping',
 
     // Booking CTA
     booking_title: 'Ready for your sharpest look?',

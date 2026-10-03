@@ -615,11 +615,17 @@
          style="padding:var(--section-pad) 0; background:var(--dark-2)">
   <div class="container">
     <div class="showcase-inner">
-      <div class="showcase-visual reveal" style="aspect-ratio:3/4">
-        <img src="assets/images/estetica.jpg"
-             alt="Sala de estética Alejandra Studio — camilla y equipamiento profesional"
-             loading="lazy" width="500" height="667">
-        <span class="showcase-accent" style="background:var(--purple)">ALEJANDRA STUDIO</span>
+      <div class="showcase-visual reveal estetica-video-card" style="aspect-ratio:3/4">
+        <video id="estetica-hero-video" autoplay muted loop playsinline poster="assets/images/estetica.jpg">
+          <source src="assets/videos/estetica-studio.mp4" type="video/mp4">
+          <source src="assets/videos/clips/clip5_studio.mp4" type="video/mp4">
+          <img src="assets/images/estetica.jpg" alt="Sala de estética Alejandra Studio — camilla y equipamiento profesional" loading="lazy" width="500" height="667">
+        </video>
+        <div class="estetica-video-badge">
+          <span class="estetica-live-dot"></span>
+          <span data-i18n="estetica_badge_video">SALA ORIGINAL · EN VIVO</span>
+        </div>
+        <span class="showcase-accent" style="background:linear-gradient(135deg,var(--purple),#6c3483);z-index:2">ALEJANDRA STUDIO</span>
       </div>
       <div class="showcase-text reveal reveal-delay-2">
         <p class="section-label" style="color:var(--purple)" data-i18n="cinema_estetica_label">Belleza &amp; Bienestar</p>
@@ -638,11 +644,39 @@
           <span style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3);color:var(--purple);padding:8px 18px;border-radius:50px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:6px" data-i18n="estetica_tag_massage">Masajes</span>
           <span style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3);color:var(--purple);padding:8px 18px;border-radius:50px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:6px" data-i18n="estetica_tag_wax">Depilación</span>
         </div>
-        <div class="estetica-gallery reveal reveal-delay-3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;">
-          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-1.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
-          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-2.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
-          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-3.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
-          <div class="estetica-thumb tilt-card" style="border-radius:10px;overflow:hidden;border:1px solid rgba(155,89,182,0.3);aspect-ratio:1;"><img src="assets/images/pestanas-4.jpg" alt="Pestañas Alejandra Studio" style="object-fit:cover;width:100%;height:100%;" loading="lazy"></div>
+        <div class="estetica-gallery-grid-main reveal reveal-delay-3">
+          <div class="estetica-tile" title="Sala Principal Alejandra Studio">
+            <img src="assets/images/estetica.jpg" alt="Sala de estética original Alejandra Studio" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_room">Sala Principal</span>
+          </div>
+          <div class="estetica-tile" title="Rincón Spa & Cuidados">
+            <img src="assets/images/hud_scene5.jpg" alt="Rincón Spa Alejandra Studio" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_spa">Rincón Spa</span>
+          </div>
+          <div class="estetica-tile" title="Lámpara Moon & Cabina">
+            <img src="assets/images/estetica-lampara.jpg" alt="Equipamiento e iluminación profesional" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_lamp">Lámpara Moon</span>
+          </div>
+          <div class="estetica-tile" title="Camilla y Confort">
+            <img src="assets/images/estetica-camilla.jpg" alt="Camilla de tratamiento y bienestar" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_camilla">Camilla &amp; Confort</span>
+          </div>
+          <div class="estetica-tile" title="Carta Oficial de Depilación & Servicios">
+            <img src="assets/images/servicios-estetica.jpg" alt="Servicios oficiales Alejandra Estudio" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_menu">Carta de Servicios</span>
+          </div>
+          <div class="estetica-tile" title="Extensiones de Pestañas">
+            <img src="assets/images/pestanas-1.jpg" alt="Pestañas Alejandra Studio" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_lash1">Pestañas Volumen</span>
+          </div>
+          <div class="estetica-tile" title="Lifting de Pestañas">
+            <img src="assets/images/pestanas-2.jpg" alt="Lifting de pestañas natural" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_lash2">Lifting Pestañas</span>
+          </div>
+          <div class="estetica-tile" title="Diseño de Mirada">
+            <img src="assets/images/pestanas-3.jpg" alt="Diseño de cejas y mirada" loading="lazy">
+            <span class="estetica-tile-label" data-i18n="estetica_photo_lash3">Diseño Mirada</span>
+          </div>
         </div>
 
         <div style="margin-top:32px" class="reveal reveal-delay-3">

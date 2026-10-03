@@ -212,6 +212,29 @@ document.querySelectorAll('.gallery-item').forEach((item, i) => {
   item.addEventListener('keydown', e => { if (e.key === 'Enter') openLightbox(i); });
 });
 
+// Alejandra Studio tiles lightbox integration
+document.querySelectorAll('.estetica-tile').forEach(tile => {
+  const img = tile.querySelector('img');
+  if (!img) return;
+  tile.setAttribute('tabindex', '0');
+  tile.setAttribute('role', 'button');
+  tile.addEventListener('click', () => {
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || 'Alejandra Studio';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  tile.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || 'Alejandra Studio';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
 lbClose?.addEventListener('click', closeLightbox);
 lbPrev?.addEventListener('click', () => showLightboxAt(currentIndex - 1));
 lbNext?.addEventListener('click', () => showLightboxAt(currentIndex + 1));
