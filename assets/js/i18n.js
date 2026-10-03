@@ -103,7 +103,7 @@ const I18N_TRANSLATIONS = {
     // Estetica Studio
     estetica_title_html: 'Tu espacio de<br><span style="color:var(--purple)">relajación</span><br>y belleza',
     estetica_desc_html: '<strong>Alejandra Studio</strong> es tu santuario de belleza y bienestar dentro de JS Barber Shop. Extensiones de pestañas premium, tratamientos faciales con Dermapen, masajes relajantes y depilación profesional — todo en un ambiente cálido y exclusivo.',
-    estetica_badge_video: 'ALEJANDRA STUDIO · FILM',
+    estetica_badge_video: 'ALEJANDRA STUDIO',
     estetica_tag_lashes: 'Pestañas',
     estetica_tag_massage: 'Masajes',
     estetica_tag_wax: 'Depilación',
@@ -280,7 +280,7 @@ const I18N_TRANSLATIONS = {
     // Estetica Studio
     estetica_title_html: 'Your sanctuary for<br><span style="color:var(--purple)">relaxation</span><br>&amp; beauty',
     estetica_desc_html: '<strong>Alejandra Studio</strong> is your beauty and wellness haven inside JS Barber Shop. Premium lash extensions, Dermapen facials, relaxing massage therapy, and professional waxing — in a warm, private atmosphere.',
-    estetica_badge_video: 'ALEJANDRA STUDIO · FILM',
+    estetica_badge_video: 'ALEJANDRA STUDIO',
     estetica_tag_lashes: 'Lashes',
     estetica_tag_massage: 'Massage',
     estetica_tag_wax: 'Waxing',
